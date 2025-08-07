@@ -1,0 +1,86 @@
+@import "tailwindcss";
+
+html {
+  scroll-behavior: smooth;
+  font-size: 18px;
+}
+
+:root {
+  --background: #f4efea;
+  --primary: #b2936f;
+  --primary-foreground: #212322;
+  --secondary-navy: #212322;
+  --secondary-navy-foreground: #f4efea;
+  --muted-50: #d7c4b7;
+  --muted: #5b1b26;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--primary-foreground);
+  --color-secondary-navy: var(--secondary-navy);
+  --color-secondary-navy-foreground: var(--secondary-navy-foreground);
+  --color-primary: var(--primary);
+  --color-muted: var(--muted);
+  --font-caveat: var(--font-caveat);
+  --color-muted-50: var(--muted-50);
+}
+
+.hero-button {
+  @apply cursor-pointer px-[25px] py-3 inline-block text-center uppercase text-[#212322] bg-[#b2936f] mask-no-repeat mask-size-[100%_100%] font-medium hover:bg-secondary-navy hover:text-secondary-navy-foreground transition-all min-w-44 mask-[url(/cta-box.svg)];
+}
+
+body {
+  overflow-x: hidden;
+  font-family: var(--font-playfair);
+  background-color: var(--background);
+  color: var(--primary-foreground);
+}
+
+
+.about-section::before {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 300px;
+  height: 395px;
+  background: url(/props04.png) center / contain no-repeat;
+}
+
+.about-section::after {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 300px;
+  height: 395px;
+  background: url(/props03.png) center / contain no-repeat;
+}
+
+.room-section::before {
+  @apply top-[-5%] left-[-5%] scale-x-[-1] rotate-[-140deg] h-[395px] w-[300px] absolute block content-[""] bg-[url(/props08.png)] bg-center bg-contain bg-no-repeat md:opacity-100 opacity-50;
+}
+
+.room-section::after {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 300px;
+  height: 395px;
+  bottom: -3rem;
+  rotate: -59deg;
+  right: -4rem;
+  opacity: 0.8;
+  background: url(/props10.png) center / contain no-repeat;
+  /* @apply right-[-4rem] bottom-[-3rem] rotate-[-59deg] absolute content-[""] bg-[url(/props10.png)] bg-center bg-contain bg-no-repeat opacity-80; */
+}
+
+
+.accommodations-section::before {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 300px;
+  height: 395px;
+  filter: invert(1);
+  background: url(/props09.png) center / contain no-repeat;
+}

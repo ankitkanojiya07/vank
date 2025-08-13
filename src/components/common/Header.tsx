@@ -58,9 +58,8 @@ const Header: React.FC = () => {
     >
       <div className="container mx-auto px-4 py-4 flex items-center justify-between">
         <button
-          className={`size-10 rounded-full text-xs flex flex-col items-center justify-center p-2 ${
-            isScrolled ? "text-secondary-navy-foreground" : "text-background"
-          }`}
+          className={`size-10 rounded-full text-xs flex flex-col items-center justify-center p-2`}
+          style={{ color: "#212322" }}
           onClick={toggleMenu}
         >
           <MenuIcon className="size-5 shrink-0" />

@@ -222,7 +222,7 @@ export const galleryImages: GalleryImage[] = [
     title: "Group Getaway",
     caption:
       "A joyful group enjoying their stay amidst serene nature at the resort",
-    image: "/gallery/slo.jpg",
+    image: "/gallery/slo.JPG",
     category: "wellness",
     featured: true,
   },

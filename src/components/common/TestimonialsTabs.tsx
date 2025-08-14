@@ -94,7 +94,7 @@ const TestimonialsTabs: React.FC = () => {
                     >
                       {/* Thumbnail Image */}
                       <img
-                        src="/gallery/slo.jpg"
+                        src="/gallery/slo.JPG"
                         alt="Hotel video thumbnail"
                         className="w-full h-full object-cover"
                         onError={(e) => {

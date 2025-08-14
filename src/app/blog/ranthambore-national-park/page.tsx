@@ -8,7 +8,7 @@ export default function RanthamboreNationalParkBlog() {
   return (
     <MainLayout>
       <HeroSection
-        image="/gallery/JUNGLE-SAFARI.jpg"
+        image="/gallery/herobackground.jpg"
         title="Ranthambore National Park - The Land of the Tiger"
         subtitle="The Land of the Tiger"
         description="Sawai Madhopur, Rajasthan, India"
@@ -34,7 +34,7 @@ export default function RanthamboreNationalParkBlog() {
                 // sizes="100vw"
                 width={1200}
                 height={800}
-                src="/gallery/JUNGLE-SAFARI.jpg"
+                src="/gallery/gal7.jpg"
                 alt="Jungle Safari Adventure"
                 className="absolute inset-0 w-full h-full object-cover"
               />

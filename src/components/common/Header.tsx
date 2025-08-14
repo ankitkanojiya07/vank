@@ -11,15 +11,16 @@ import { usePathname } from "next/navigation";
 
 const navItems = [
   { href: "/", label: "Home" },
-  { href: "/about", label: "Our Story" },
   { href: "/accommodations", label: "Stay" },
   { href: "/amenities", label: "Guest Facilities" },
   { href: "/excursions", label: "Nearby Attractions" },
-  { href: "/blog", label: "Blog" },
   { href: "/gallery", label: "Gallery" },
+  { href: "/about", label: "Our Story" },
   { href: "/testimonials", label: "Stay Stories" },
+  { href: "/blog", label: "Blog" },
   { href: "/contact", label: "Contact" },
 ];
+
 const Header: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
@@ -58,8 +59,8 @@ const Header: React.FC = () => {
     >
       <div className="container mx-auto px-4 py-4 flex items-center justify-between">
         <button
-          className={`size-10 rounded-full text-xs flex flex-col items-center justify-center p-2`}
-          style={{ color: "#212322" }}
+          className={`size-10 rounded-full text-xs flex flex-col items-center justify-center p-2 transition-colors duration-300`}
+          style={{ color: isScrolled ? "#ffffff" : "#212322" }}
           onClick={toggleMenu}
         >
           <MenuIcon className="size-5 shrink-0" />

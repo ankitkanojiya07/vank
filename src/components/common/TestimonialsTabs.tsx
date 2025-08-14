@@ -12,7 +12,7 @@ import {
 
 const tabs = [
   {
-    label: "Hotel Video",
+    label: "Guest Video",
     icon: <Video className="w-5 h-5 mr-1" />,
     tooltip: "Watch our hotel introduction video",
   },
@@ -24,7 +24,8 @@ const tabs = [
 ];
 
 const TestimonialsTabs: React.FC = () => {
-  const [activeTab, setActiveTab] = useState(1); // Reviews tab active by default
+  // Set to 1 to make "Guest Reviews" tab active by default (0-indexed)
+  const [activeTab, setActiveTab] = useState(1);
   const [activeReview, setActiveReview] = useState(0);
   const [isVideoPlaying, setIsVideoPlaying] = useState(false);
 
@@ -88,22 +89,50 @@ const TestimonialsTabs: React.FC = () => {
                   {!isVideoPlaying ? (
                     /* Video Thumbnail/Poster */
                     <div
-                      className="relative w-full h-full bg-gradient-to-br from-secondary-navy to-secondary-navy/80 flex items-center justify-center cursor-pointer group"
+                      className="relative w-full h-full cursor-pointer group"
                       onClick={handleVideoPlay}
                     >
-                      <div className="absolute inset-0 bg-black/20"></div>
-                      <div className="relative z-10 flex flex-col items-center space-y-3">
-                        <div className="w-16 h-16 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center group-hover:bg-white/30 transition-all duration-300">
+                      {/* Thumbnail Image */}
+                      <img
+                        src="/gallery/slo.jpg"
+                        alt="Hotel video thumbnail"
+                        className="w-full h-full object-cover"
+                        onError={(e) => {
+                          // Fallback to gradient background if image fails to load
+                          const target = e.target as HTMLImageElement;
+                          target.style.display = "none";
+                          const parent = target.parentElement;
+                          if (parent) {
+                            parent.classList.add(
+                              "bg-gradient-to-br",
+                              "from-secondary-navy",
+                              "to-secondary-navy/80"
+                            );
+                          }
+                        }}
+                      />
+
+                      {/* Overlay */}
+                      <div className="absolute inset-0 bg-black/30 group-hover:bg-black/40 transition-all duration-300"></div>
+
+                      {/* Play Button and Text */}
+                      <div className="absolute inset-0 flex flex-col items-center justify-center z-10">
+                        <div className="w-16 h-16 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center group-hover:bg-white/30 group-hover:scale-110 transition-all duration-300 mb-4">
                           <Play className="w-8 h-8 text-white ml-1" />
                         </div>
                         <div className="text-center">
-                          <h3 className="text-white font-semibold text-lg">
-                            Hotel Tour
+                          <h3 className="text-white font-semibold text-lg drop-shadow-lg">
+                            Hotel Tour By Guest
                           </h3>
-                          <p className="text-white/80 text-sm">
+                          <p className="text-white/90 text-sm drop-shadow">
                             Discover our amenities
                           </p>
                         </div>
+                      </div>
+
+                      {/* Duration Badge (Optional) */}
+                      <div className="absolute bottom-3 right-3 bg-black/70 text-white text-xs px-2 py-1 rounded">
+                        2:30
                       </div>
                     </div>
                   ) : (
@@ -114,8 +143,9 @@ const TestimonialsTabs: React.FC = () => {
                       onPlay={handleVideoPlay}
                       onPause={handleVideoPause}
                       onEnded={handleVideoPause}
+                      poster="/images/hotel-thumbnail.jpg"
                     >
-                      <source src="/videos/hotel-tour.mp4" type="video/mp4" />
+                      <source src="/gallery/vans.mp4" type="video/mp4" />
                       <source src="/videos/hotel-tour.webm" type="video/webm" />
                       Your browser does not support the video tag.
                     </video>

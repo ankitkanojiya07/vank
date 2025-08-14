@@ -20,7 +20,7 @@ function AnimatedCarousel() {
     return () => clearInterval(interval);
   }, [isAutoPlaying]);
 
-  const goToSlide = (index:number) => {
+  const goToSlide = (index: number) => {
     setCurrentSlide(index);
     setIsAutoPlaying(false);
     setTimeout(() => setIsAutoPlaying(true), 10000);
@@ -122,7 +122,7 @@ export function AnimatedCarouselWithCards() {
   const cards = [
     {
       id: 1,
-      image: "/gallery/JUNGLE-SAFARI.jpg",
+      image: "/gallery/gal7.jpg",
       title: "Jungle Safari",
       description:
         "The Sariska gate is just 5 km from the resort. After the successful relocation of tigers, The National Park now has over 19 Tigers.",
@@ -165,7 +165,7 @@ export function AnimatedCarouselWithCards() {
     {
       id: 7,
       image: "/gallery/HIKING.jpg",
-      title: "Hiking",
+      title: "Trekking & Hiking",
       description:
         "Hiking amongst the Aravali Ranges walking through the agriculture fields can be planned on request.",
     },

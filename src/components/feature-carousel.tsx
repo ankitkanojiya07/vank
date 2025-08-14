@@ -1,4 +1,3 @@
-
 import Image from "next/image";
 import React from "react";
 
@@ -12,7 +11,7 @@ const featureCarouselItems = [
     link: "/about",
   },
   {
-    img: "/new_img/feature_2.jpg",
+    img: "/gallery/feature_6.jpg",
     title: "Bespoke Experiences",
     subtitle: "Curated Adventures in Rajasthan's Heart",
     description:
@@ -50,15 +49,16 @@ const FeatureCarousel = () => {
     <div>
       <div>
         {featureCarouselItems.map((item, index) => (
-          <div className="flex  md:odd:flex-row-reverse even:bg-background even:text-foreground md:flex-row flex-col-reverse" key={index}>
+          <div
+            className="flex  md:odd:flex-row-reverse even:bg-background even:text-foreground md:flex-row flex-col-reverse"
+            key={index}
+          >
             <div className="md:w-1/2 flex-1">
               <div className="px-8 ml-auto py-10 flex-col flex justify-center items-start h-full">
                 <p className="text-sm uppercase max-sm:text-center tracking-wider  font-semibold">
                   {item.subtitle}
                 </p>
-                <h3
-                  className="md:text-5xl text-4xl md:text-start text-center my-3 font-medium text-primary"
-                >
+                <h3 className="md:text-5xl text-4xl md:text-start text-center my-3 font-medium text-primary">
                   {item.title}
                 </h3>
                 <p className="text-base max-sm:text-center leading-relaxed">

@@ -8,9 +8,8 @@ import Image from "next/image";
 const SariskaBlogComponent = () => {
   const blogCards = [
     {
-      image: "/gallery/7328530two.jpg", // Fixed: removed "./" for better Next.js compatibility
+      image: "/gallery/tiger111.tif",
       alt: "Sariska Tiger Safari",
-      cameraLabel: "Tigers at Sariska",
       location: "Alwar, Rajasthan",
       title: "Sariska Tiger Reserve - A Sanctuary of Serenity and Beauty",
       description:
@@ -19,10 +18,8 @@ const SariskaBlogComponent = () => {
       href: "/blog/sariska-tiger-reserve",
     },
     {
-      image:
-        "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=800&q=80",
+      image: "/gallery/gal7.jpg",
       alt: "Jungle Safari Adventure",
-      cameraLabel: "Jungle Safari Adventure",
       location: "Ranthambore, Rajasthan",
       title: "Ranthambore National Park - The Land of the Tiger",
       description:
@@ -32,7 +29,7 @@ const SariskaBlogComponent = () => {
     },
   ];
 
-  const formatDate = (dateString:any) => {
+  const formatDate = (dateString: any) => {
     return new Date(dateString).toLocaleDateString("en-US", {
       year: "numeric",
       month: "long",
@@ -50,32 +47,29 @@ const SariskaBlogComponent = () => {
           >
             <div className="flex flex-col md:flex-row">
               {/* Image Section */}
-              <div className="md:w-1/3 relative overflow-hidden group">
-                <div className="aspect-[4/3] md:aspect-auto md:h-full relative">
+              <div className="md:w-1/2 relative overflow-hidden group">
+                <div className="aspect-[16/10] md:aspect-[4/3] relative">
                   <Image
-                    width={500}
-                    height={300}
-                    sizes="(max-width: 768px) 100vw, 33vw"
+                    width={600}
+                    height={400}
+                    sizes="(max-width: 768px) 100vw, 50vw"
                     src={card.image}
                     alt={card.alt}
-                    className="object-cover transition-transform duration-300 group-hover:scale-105"
-                    priority={idx === 0} // Prioritize first image for LCP
+                    className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+                    priority={idx === 0}
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent"></div>
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent"></div>
 
-                  {/* Camera overlay */}
+                  {/* Camera overlay - only shows icon on hover */}
                   <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                     <div className="text-white text-center">
-                      <Camera className="w-12 h-12 mx-auto mb-2 drop-shadow-lg" />
-                      <p className="text-sm font-medium drop-shadow-lg">
-                        {card.cameraLabel}
-                      </p>
+                      <Camera className="w-12 h-12 mx-auto drop-shadow-lg" />
                     </div>
                   </div>
 
                   {/* Location badge */}
                   <div className="absolute bottom-4 left-4">
-                    <div className="flex items-center bg-black/50 backdrop-blur-sm text-white text-xs px-3 py-1 rounded-full">
+                    <div className="flex items-center bg-black/60 backdrop-blur-sm text-white text-xs px-3 py-1 rounded-full">
                       <MapPin className="w-3 h-3 mr-1" />
                       <span>{card.location}</span>
                     </div>
@@ -84,7 +78,7 @@ const SariskaBlogComponent = () => {
               </div>
 
               {/* Content Section */}
-              <div className="md:w-2/3 p-6 md:p-8 flex flex-col justify-between">
+              <div className="md:w-1/2 p-6 md:p-8 flex flex-col justify-between">
                 <div className="flex-1">
                   <h2 className="text-xl md:text-2xl lg:text-3xl font-bold text-gray-900 mb-4 leading-tight hover:text-[#46141d] transition-colors">
                     <Link href={card.href} className="hover:underline">

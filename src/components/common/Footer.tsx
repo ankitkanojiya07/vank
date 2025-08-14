@@ -9,7 +9,7 @@ import {
   Facebook,
   Instagram,
   Linkedin,
-  Globe,
+  ExternalLink,
 } from "lucide-react";
 import { fadeInUp, staggerContainer } from "@/lib/framer";
 import Image from "next/image";
@@ -20,9 +20,9 @@ const Footer: React.FC = () => {
   const quickLinks = [
     { href: "/", label: "Home" },
     { href: "/about", label: "About" },
-    { href: "/accommodations", label: "Accommodation" },
-    { href: "/amenities", label: "Amenities" },
-    { href: "/excursions", label: "Excursions" },
+    { href: "/accommodations", label: "Stay" },
+    { href: "/amenities", label: "Guest Facilities" },
+    { href: "/excursions", label: "Nearby Attractions" },
     { href: "/blog", label: "Blog" },
     { href: "/gallery", label: "Gallery" },
     { href: "/testimonials", label: "Testimonials" },
@@ -45,6 +45,12 @@ const Footer: React.FC = () => {
       href: "https://www.linkedin.com/company/vanaashryaresort/",
       label: "LinkedIn",
     },
+  ];
+
+  const moreHotels = [
+    { name: "Vanashare", href: "https://www.vanaashrya.com/" },
+    { name: "Ranthabhore Regency", href: "https://ranthamboreregency.com/" },
+    { name: "Aagna", href: "https://ranthamboreaangan.com/" },
   ];
 
   return (
@@ -110,7 +116,7 @@ const Footer: React.FC = () => {
               className="flex-1 flex flex-col items-start text-left"
             >
               <h4 className="text-base sm:text-lg font-semibold mb-4 sm:mb-6">
-                Hotel
+                Quick Links
               </h4>
               <ul className="space-y-2 sm:space-y-3">
                 {quickLinks.slice(2, 7).map((link) => (
@@ -167,47 +173,27 @@ const Footer: React.FC = () => {
             </motion.div>
           </div>
 
-          {/* Sales & Reservation Office */}
+          {/* More Hotels */}
           <motion.div
             variants={fadeInUp}
             className="flex flex-col items-center md:items-start text-center md:text-left"
           >
             <h4 className="text-base sm:text-lg font-semibold mb-4 sm:mb-6">
-              Sales & Reservation Office
+              More Hotels
             </h4>
-            <div className="space-y-3 sm:space-y-4">
-              <div className="text-gray-300 text-xs sm:text-sm">
-                <p className="font-medium mb-2">Yellow Light Hospitality</p>
-                <p>10th floor, SPAZE ITECH PARK, 1018B,</p>
-                <p>Sector 49, Gurugram, Haryana 122018</p>
-              </div>
-              <div className="flex flex-col sm:flex-row items-center sm:items-start sm:space-x-3 space-y-1 sm:space-y-0">
-                <Mail size={18} className="text-[#bfa76f] flex-shrink-0" />
-                <a
-                  href="mailto:info@yellowlighthospitality.com"
-                  className="text-gray-300 hover:text-[#bfa76f] transition-colors duration-200 text-xs sm:text-sm"
-                >
-                  info@yellowlighthospitality.com
-                </a>
-              </div>
-              <div className="flex flex-col sm:flex-row items-center sm:items-start sm:space-x-3 space-y-1 sm:space-y-0">
-                <Globe size={18} className="text-[#bfa76f] flex-shrink-0" />
-                <a
-                  href="https://www.yellowlighthospitality.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-gray-300 hover:text-[#bfa76f] transition-colors duration-200 text-xs sm:text-sm"
-                >
-                  www.yellowlighthospitality.com
-                </a>
-              </div>
-              <div className="flex flex-col sm:flex-row items-center sm:items-start sm:space-x-3 space-y-1 sm:space-y-0">
-                <Phone size={18} className="text-[#bfa76f] flex-shrink-0" />
-                <div className="text-gray-300 text-xs sm:text-sm">
-                  <p>7840052880 / 9711831487</p>
-                </div>
-              </div>
-            </div>
+            <ul className="space-y-2 sm:space-y-3">
+              {moreHotels.map((hotel) => (
+                <li key={hotel.name}>
+                  <a
+                    href={hotel.href}
+                    className="text-gray-300 hover:text-[#bfa76f] transition-colors duration-200 text-sm sm:text-base flex items-center justify-center md:justify-start gap-2"
+                  >
+                    {hotel.name}
+                    <ExternalLink size={14} className="opacity-60" />
+                  </a>
+                </li>
+              ))}
+            </ul>
           </motion.div>
         </motion.div>
 
@@ -230,18 +216,18 @@ const Footer: React.FC = () => {
               >
                 Privacy Policy
               </a>
-              <a
+              {/* <a
                 href="#"
                 className="text-gray-400 hover:text-[#bfa76f] transition-colors duration-200"
               >
                 Terms of Service
-              </a>
-              <a
+              </a> */}
+              {/* <a
                 href="#"
                 className="text-gray-400 hover:text-[#bfa76f] transition-colors duration-200"
               >
                 Cancellation Policy
-              </a>
+              </a> */}
             </div>
           </div>
           <div className="mt-3 pt-3 border-t border-gray-800 w-full">

@@ -11,7 +11,7 @@ const roomImg = [
   "/new_img/room_4.jpg",
 ];
 
-const barImg = ["/new_img/bar1.JPG", "/new_img/bar.JPG,"];
+const barImg = ["/new_img/bar3.JPG", "/new_img/bar1.JPG,"];
 
 const rooftopImg = ["/new_img/rooftop_1.JPG", "/new_img/rooftop_2.JPG"];
 

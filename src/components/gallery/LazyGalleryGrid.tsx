@@ -1,10 +1,10 @@
-'use client';
+"use client";
 
-import React, { useState } from 'react';
-import { motion } from 'framer-motion';
-import { fadeInUp, staggerContainer } from '@/lib/framer';
-import { getFeaturedGalleryImages, GalleryImage } from '@/data/gallery';
-import GalleryCard from './GalleryCard';
+import React, { useState } from "react";
+import { motion } from "framer-motion";
+import { fadeInUp, staggerContainer } from "@/lib/framer";
+import { getFeaturedGalleryImages, GalleryImage } from "@/data/gallery";
+import GalleryCard from "./GalleryCard";
 
 const LazyGalleryGrid: React.FC = () => {
   const featuredImages = getFeaturedGalleryImages().slice(0, 6); // Show only 6 featured images
@@ -24,8 +24,8 @@ const LazyGalleryGrid: React.FC = () => {
           variants={fadeInUp}
           transition={{ delay: index * 0.1 }}
         >
-          <GalleryCard 
-            image={image} 
+          <GalleryCard
+            image={image}
             featured={false}
             onClick={() => setSelectedImage(image)}
           />
@@ -33,8 +33,8 @@ const LazyGalleryGrid: React.FC = () => {
       ))}
       {/* Modal rendered at grid level */}
       {selectedImage ? (
-        <GalleryCard 
-          image={selectedImage} 
+        <GalleryCard
+          image={selectedImage}
           featured={false}
           isModalOpen={true}
           onClose={() => setSelectedImage(null)}
@@ -44,4 +44,4 @@ const LazyGalleryGrid: React.FC = () => {
   );
 };
 
-export default LazyGalleryGrid; 
+export default LazyGalleryGrid;

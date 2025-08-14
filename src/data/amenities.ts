@@ -32,7 +32,7 @@ export const amenities: Amenity[] = [
     icon: "Flower",
     category: "wellness",
     featured: true,
-    image: "/images/rooms/evening.jpg",
+    image: "/images/rooms/evening.JPG",
   },
   {
     id: "cloud9-bar",
@@ -111,7 +111,7 @@ export const amenities: Amenity[] = [
     icon: "Flame",
     category: "recreation",
     featured: false,
-    image: "/gallery/gal10.jpg",
+    image: "/gallery/gal10.JPG",
   },
   {
     id: "wifi",

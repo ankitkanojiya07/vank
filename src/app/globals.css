@@ -37,6 +37,45 @@ body {
   color: var(--primary-foreground);
 }
 
+/* Gallery specific responsive improvements */
+.masonry-item {
+  break-inside: avoid;
+  page-break-inside: avoid;
+}
+
+/* Prevent layout shifts during image loading */
+.masonry-item img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Better touch targets for mobile */
+@media (max-width: 768px) {
+  .masonry-item {
+    min-height: 200px;
+  }
+  
+  .masonry-item img {
+    object-fit: cover;
+    width: 100%;
+  }
+}
+
+/* Ensure containers don't overflow */
+.gallery-container {
+  max-width: 100vw;
+  overflow-x: hidden;
+}
+
+/* Better spacing on very small screens */
+@media (max-width: 480px) {
+  .container {
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+  }
+}
+
 
 .about-section::before {
   content: "";

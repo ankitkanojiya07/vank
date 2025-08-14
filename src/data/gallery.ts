@@ -68,9 +68,9 @@ export const galleryImages: GalleryImage[] = [
     title: "Outdoor Wilderness Dining",
     caption:
       "Step into the heart of the wild and savour a unique dining adventure.",
-    image: "/gallery/gal10.jpg",
+    image: "/gallery/gal10.JPG",
     category: "wellness",
-    featured: true,
+    featured: false,
   },
   {
     id: "vanasutra-spa",
@@ -139,7 +139,7 @@ export const galleryImages: GalleryImage[] = [
     title: "Cultural Evening",
     caption:
       "under the golden glow of the evening sky, enjoy freshly prepared meals",
-    image: "/images/rooms/evening.jpg",
+    image: "/images/rooms/evening.JPG",
     category: "activities",
     featured: false,
   },

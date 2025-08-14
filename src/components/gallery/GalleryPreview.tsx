@@ -40,7 +40,7 @@ const GalleryPreview: React.FC = () => {
     );
 
     // Create a new array with our desired order
-    let arrangedImages = [];
+    const arrangedImages = [];
 
     // For 3 columns layout:
     if (columns === 3) {

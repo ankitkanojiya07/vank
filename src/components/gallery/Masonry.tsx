@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useRef } from "react";
 import Image from "next/image";
 import { GalleryImage } from "@/data/gallery";
 
@@ -19,9 +19,6 @@ const Masonry: React.FC<MasonryProps> = ({
   scaleOnHover = true,
   colorShiftOnHover = false,
 }) => {
-  const [columnHeights, setColumnHeights] = useState<number[]>(
-    Array(columns).fill(0)
-  );
   const itemRefs = useRef<(HTMLDivElement | null)[]>([]);
 
   // Better masonry layout logic - distribute items based on column heights
@@ -58,7 +55,9 @@ const Masonry: React.FC<MasonryProps> = ({
             return (
               <div
                 key={item.id}
-                ref={(el) => (itemRefs.current[globalIdx] = el)}
+                ref={(el) => {
+                  itemRefs.current[globalIdx] = el;
+                }}
                 className={`masonry-item relative rounded-2xl overflow-hidden shadow-xl group transition-all duration-300 cursor-pointer bg-white border border-gray-200 hover:shadow-2xl`}
               >
                 <div

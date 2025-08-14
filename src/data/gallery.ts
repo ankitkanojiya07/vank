@@ -108,14 +108,14 @@ export const galleryImages: GalleryImage[] = [
     category: "recreation",
     featured: true,
   },
-  {
-    id: "indoor-games",
-    title: "Folk Dance",
-    caption: "Beauty and cultural Dance Performance",
-    image: "/gallery/gal8.jpg",
-    category: "recreation",
-    featured: false,
-  },
+  // {
+  //   id: "indoor-games",
+  //   title: "Folk Dance",
+  //   caption: "Beauty and cultural Dance Performance",
+  //   image: "/gallery/gal8.jpg",
+  //   category: "recreation",
+  //   featured: true,
+  // },
 
   // Activities
   {
@@ -183,11 +183,11 @@ export const galleryImages: GalleryImage[] = [
     caption: "Modern conference facilities for business meetings and events",
     image: "/gallery/cong.jpg",
     category: "resort",
-    featured: false,
+    featured: true,
   },
   {
     id: "mansorover-lake",
-    title: "Mansorover Lake",
+    title: "Siliserh Lake",
     caption: "Serene lake views and peaceful surroundings",
     image: "/gallery/MANSOROVER-LAKE.jpg",
     category: "resort",
@@ -219,9 +219,10 @@ export const galleryImages: GalleryImage[] = [
   },
   {
     id: "spa-soul-spring",
-    title: "Yoga",
-    caption: "Wellness Yoga with Sunrise & Natural Habite ",
-    image: "/gallery/yoga.jpg",
+    title: "Group Getaway",
+    caption:
+      "A joyful group enjoying their stay amidst serene nature at the resort",
+    image: "/gallery/slo.jpg",
     category: "wellness",
     featured: true,
   },

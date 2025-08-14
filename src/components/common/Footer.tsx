@@ -179,7 +179,7 @@ const Footer: React.FC = () => {
             className="flex flex-col items-center md:items-start text-center md:text-left"
           >
             <h4 className="text-base sm:text-lg font-semibold mb-4 sm:mb-6">
-              More Hotels
+              Explore Our Properties
             </h4>
             <ul className="space-y-2 sm:space-y-3">
               {moreHotels.map((hotel) => (

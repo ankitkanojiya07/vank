@@ -24,8 +24,8 @@ const tabs = [
 ];
 
 const TestimonialsTabs: React.FC = () => {
-  // Set to 1 to make "Guest Reviews" tab active by default (0-indexed)
-  const [activeTab, setActiveTab] = useState(1);
+  // Set to 0 to make "Guest Video" tab active by default (0-indexed)
+  const [activeTab, setActiveTab] = useState(0);
   const [activeReview, setActiveReview] = useState(0);
   const [isVideoPlaying, setIsVideoPlaying] = useState(false);
 
@@ -125,7 +125,7 @@ const TestimonialsTabs: React.FC = () => {
                             Hotel Tour By Guest
                           </h3>
                           <p className="text-white/90 text-sm drop-shadow">
-                            Discover our amenities
+                            Click to play video
                           </p>
                         </div>
                       </div>
@@ -140,10 +140,11 @@ const TestimonialsTabs: React.FC = () => {
                     <video
                       className="w-full h-full object-cover"
                       controls
+                      autoPlay
                       onPlay={handleVideoPlay}
                       onPause={handleVideoPause}
                       onEnded={handleVideoPause}
-                      poster="/images/hotel-thumbnail.jpg"
+                      poster="/gallery/slo.jpg"
                     >
                       <source src="/gallery/vans.mp4" type="video/mp4" />
                       <source src="/videos/hotel-tour.webm" type="video/webm" />

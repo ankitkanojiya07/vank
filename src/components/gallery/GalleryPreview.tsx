@@ -26,7 +26,7 @@ const GalleryPreview: React.FC = () => {
 
   // Custom function to arrange gallery images with specific positioning
   const getArrangedGalleryImages = () => {
-    const featuredImages = getFeaturedGalleryImages();
+    const featuredImages = getFeaturedGalleryImages().slice(0, 12); // Limit to 12 cards
 
     // Find Games Room and Yoga cards
     const gamesRoomCard = featuredImages.find(

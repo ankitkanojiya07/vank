@@ -30,13 +30,13 @@ const Masonry: React.FC<MasonryProps> = ({
       columnWrappers[i] = [];
     }
 
-    items.forEach((item, idx) => {
+    items.forEach((item) => {
       // Find the column with minimum height
       const minHeightIndex = heights.indexOf(Math.min(...heights));
       columnWrappers[minHeightIndex].push(item);
 
-      // Estimate item height based on aspect ratio or use default
-      const estimatedHeight = 300 + (idx % 3) * 50; // Varied heights for better distribution
+      // Use fixed height for consistent card sizes
+      const estimatedHeight = 320; // Fixed height for all cards
       heights[minHeightIndex] += estimatedHeight;
     });
 
@@ -58,7 +58,7 @@ const Masonry: React.FC<MasonryProps> = ({
                 ref={(el) => {
                   itemRefs.current[globalIdx] = el;
                 }}
-                className={`masonry-item relative rounded-2xl overflow-hidden shadow-xl group transition-all duration-300 cursor-pointer bg-white border border-gray-200 hover:shadow-2xl`}
+                className={`masonry-item relative rounded-2xl overflow-hidden shadow-xl group transition-all duration-300 cursor-pointer bg-white border border-gray-200 hover:shadow-2xl h-80`}
               >
                 <div
                   className={`transition-transform duration-300 group-hover:scale-105 group-hover:shadow-2xl ${
@@ -70,7 +70,7 @@ const Masonry: React.FC<MasonryProps> = ({
                     alt={item.title}
                     width={600}
                     height={400}
-                    className="w-full h-auto object-cover rounded-2xl"
+                    className="w-full h-80 object-cover rounded-2xl"
                     style={{
                       filter: colorShiftOnHover ? "grayscale(100%)" : undefined,
                       transition: "filter 0.3s",

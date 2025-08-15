@@ -48,9 +48,9 @@ const Footer: React.FC = () => {
   ];
 
   const moreHotels = [
-    { name: "Vanashare", href: "https://www.vanaashrya.com/" },
-    { name: "Ranthabhore Regency", href: "https://ranthamboreregency.com/" },
-    { name: "Aagna", href: "https://ranthamboreaangan.com/" },
+    // { name: "Vanashare", href: "https://www.vanaashrya.com/" },
+    { name: "Ranthambore Regency", href: "https://ranthamboreregency.com/" },
+    { name: "Ranthambore Aangan", href: "https://ranthamboreaangan.com/" },
   ];
 
   return (
@@ -207,7 +207,7 @@ const Footer: React.FC = () => {
         >
           <div className="w-full flex flex-col sm:flex-row justify-between items-center gap-2 sm:gap-0">
             <div className="text-gray-400 text-xs sm:text-sm">
-              © {currentYear} Vanaashrya. All rights reserved.
+              © {currentYear} Vanaashrya All rights reserved.
             </div>
             <div className="flex flex-col sm:flex-row gap-2 sm:gap-6 text-xs sm:text-sm mt-2 sm:mt-0">
               <a
@@ -232,8 +232,24 @@ const Footer: React.FC = () => {
           </div>
           <div className="mt-3 pt-3 border-t border-gray-800 w-full">
             <p className="text-gray-400 text-xs text-center">
-              Designed and developed with ❤️ for wildlife conservation and
-              sustainable tourism.
+              Designed and developed by{" "}
+              <a
+                href="https://www.linkedin.com/in/ankitkanojiya07/" // Replace with actual LinkedIn
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-blue-400 hover:underline"
+              >
+                Ankit
+              </a>{" "}
+              &{" "}
+              <a
+                href="https://www.linkedin.com/in/sujeetkumar-tech/" // Replace with actual LinkedIn
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-blue-400 hover:underline"
+              >
+                Sujeet
+              </a>
             </p>
           </div>
         </motion.div>

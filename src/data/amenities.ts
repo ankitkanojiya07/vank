@@ -27,8 +27,7 @@ export const amenities: Amenity[] = [
   {
     id: "woods-wellness",
     name: "Cultural Evening",
-    description:
-      "Under the golden glow of the evening sky, enjoy freshly prepared meal.",
+    description: "Under the golden glow of the evening sky enjoy.",
     icon: "Flower",
     category: "wellness",
     featured: true,

@@ -137,9 +137,8 @@ export const galleryImages: GalleryImage[] = [
   {
     id: "cultural-evening",
     title: "Cultural Evening",
-    caption:
-      "under the golden glow of the evening sky, enjoy freshly prepared meals",
-    image: "/images/rooms/evening.JPG",
+    caption: "under the golden glow of the evening sky, enjoy",
+    image: "/gallery/evening.JPG",
     category: "activities",
     featured: false,
   },

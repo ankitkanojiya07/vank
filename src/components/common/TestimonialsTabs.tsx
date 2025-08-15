@@ -146,8 +146,8 @@ const TestimonialsTabs: React.FC = () => {
                       onEnded={handleVideoPause}
                       poster="/gallery/slo.jpg"
                     >
-                      <source src="/gallery/vans.mp4" type="video/mp4" />
-                      <source src="/videos/hotel-tour.webm" type="video/webm" />
+                      <source src="/gallery/vans.MP4" type="video/mp4" />
+                      {/* <source src="/videos/hotel-tour.webm" type="video/webm" /> */}
                       Your browser does not support the video tag.
                     </video>
                   )}

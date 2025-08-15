@@ -32,7 +32,7 @@ export const amenities: Amenity[] = [
     icon: "Flower",
     category: "wellness",
     featured: true,
-    image: "/images/rooms/evening.JPG",
+    image: "/gallery/evening.JPG",
   },
   {
     id: "cloud9-bar",

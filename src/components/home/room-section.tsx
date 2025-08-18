@@ -163,7 +163,7 @@ const ImageCarouselCrossfade = ({ imgs }: { imgs: string[] }) => {
           height={800}
           quality={95}
           priority
-          unoptimized
+          // unoptimized
           className="absolute inset-0 w-full h-full object-cover"
         />
       </AnimatePresence>

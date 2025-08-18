@@ -2,11 +2,113 @@
 import React, { useState } from "react";
 import { X } from "lucide-react";
 
-const BookNowButton: React.FC = () => {
+const BookNowButton = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [result, setResult] = useState("");
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [formData, setFormData] = useState({
+    checkin_date: "",
+    checkout_date: "",
+    guests: "",
+    name: "",
+    email: "",
+    phone: "",
+    special_requests: "",
+  });
 
   const openModal = () => setIsModalOpen(true);
-  const closeModal = () => setIsModalOpen(false);
+  const closeModal = () => {
+    setIsModalOpen(false);
+    setResult("");
+    setFormData({
+      checkin_date: "",
+      checkout_date: "",
+      guests: "",
+      name: "",
+      email: "",
+      phone: "",
+      special_requests: "",
+    });
+  };
+
+  const handleInputChange = (e:any) => {
+    const { name, value } = e.target;
+    setFormData((prev) => ({
+      ...prev,
+      [name]: value,
+    }));
+  };
+
+  const onSubmit = async () => {
+    // Basic validation
+    if (
+      !formData.checkin_date ||
+      !formData.checkout_date ||
+      !formData.guests ||
+      !formData.name ||
+      !formData.email ||
+      !formData.phone
+    ) {
+      setResult("Please fill in all required fields.");
+      return;
+    }
+
+    setIsSubmitting(true);
+    setResult("Sending booking request...");
+
+    const submitData = new FormData();
+
+    // Replace with your actual Web3Forms access key
+    submitData.append("access_key", "YOUR_ACCESS_KEY_HERE");
+
+    // Add form subject for better organization
+    submitData.append("subject", "New Booking Request - Vanaashrya Resort");
+
+    // Add additional context
+    submitData.append("from_name", "Vanaashrya Resort Booking Form");
+
+    // Add form data
+    Object.keys(formData).forEach((key) => {
+      submitData.append(key, formData[key as keyof typeof formData] || "");
+    });
+
+    try {
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        body: submitData,
+      });
+
+      const data = await response.json();
+
+      if (data.success) {
+        setResult(
+          "Booking request submitted successfully! We'll contact you soon."
+        );
+        // Reset form
+        setFormData({
+          checkin_date: "",
+          checkout_date: "",
+          guests: "",
+          name: "",
+          email: "",
+          phone: "",
+          special_requests: "",
+        });
+        // Close modal after 3 seconds
+        setTimeout(() => {
+          closeModal();
+        }, 3000);
+      } else {
+        console.log("Error", data);
+        setResult(data.message || "Something went wrong. Please try again.");
+      }
+    } catch (error) {
+      console.error("Submission error:", error);
+      setResult("Network error. Please check your connection and try again.");
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
 
   return (
     <>
@@ -31,10 +133,10 @@ const BookNowButton: React.FC = () => {
 
       {/* Modal Overlay */}
       {isModalOpen && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center">
+        <div className="fixed inset-0 z-[150] flex items-center justify-center">
           {/* Backdrop */}
           <div
-            className="absolute inset-0 bg-black bg-opacity-50 backdrop-blur-sm transition-opacity"
+            className="absolute inset-0 bg-black/30 backdrop-blur-sm transition-opacity"
             onClick={closeModal}
           />
 
@@ -43,7 +145,7 @@ const BookNowButton: React.FC = () => {
             {/* Close Button */}
             <button
               onClick={closeModal}
-              className="absolute top-4 right-4 text-gray-500 hover:text-gray-700 transition-colors"
+              className="absolute top-4 right-4 text-gray-500 hover:text-gray-700 transition-colors z-10"
               aria-label="Close modal"
             >
               <X size={24} />
@@ -52,7 +154,7 @@ const BookNowButton: React.FC = () => {
             {/* Modal Header */}
             <div
               style={{ backgroundColor: "#1e2939" }}
-              className="hover:bg-[#16202f] text-white p-6 rounded-t-xl"
+              className="text-white p-6 rounded-t-xl"
             >
               <h2 className="text-2xl font-bold">Our Accommodations</h2>
               <p className="opacity-90">
@@ -67,95 +169,85 @@ const BookNowButton: React.FC = () => {
                 <div className="grid md:grid-cols-3 gap-4">
                   <div>
                     <label className="block text-sm font-medium text-gray-700 mb-1">
-                      Check-in Date
+                      Check-in Date *
                     </label>
                     <input
                       type="date"
+                      name="checkin_date"
+                      value={formData.checkin_date}
+                      onChange={handleInputChange}
                       className="w-full border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-900 focus:border-transparent"
                     />
                   </div>
                   <div>
                     <label className="block text-sm font-medium text-gray-700 mb-1">
-                      Check-out Date
+                      Check-out Date *
                     </label>
                     <input
                       type="date"
+                      name="checkout_date"
+                      value={formData.checkout_date}
+                      onChange={handleInputChange}
                       className="w-full border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-900 focus:border-transparent"
                     />
                   </div>
                   <div>
                     <label className="block text-sm font-medium text-gray-700 mb-1">
-                      Guests
+                      Guests *
                     </label>
-                    <select className="w-full border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-900 focus:border-transparent">
-                      <option>1 Guest</option>
-                      <option>2 Guests</option>
-                      <option>3 Guests</option>
-                      <option>4 Guests</option>
-                      <option>5+ Guests</option>
+                    <select
+                      name="guests"
+                      value={formData.guests}
+                      onChange={handleInputChange}
+                      className="w-full border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-900 focus:border-transparent"
+                    >
+                      <option value="">Select guests</option>
+                      <option value="1">1 Guest</option>
+                      <option value="2">2 Guests</option>
+                      <option value="3">3 Guests</option>
+                      <option value="4">4 Guests</option>
+                      <option value="5+">5+ Guests</option>
                     </select>
                   </div>
                 </div>
-
-                {/* Room Selection */}
-                {/* <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-3">
-                    Select Accommodation
-                  </label>
-                  <div className="grid md:grid-cols-2 gap-4">
-                    <div className="border rounded-lg p-4 cursor-pointer hover:border-blue-900 hover:bg-gray-50 transition-colors">
-                      <div className="font-medium text-lg mb-1">
-                        Luxury Villa
-                      </div>
-                      <div className="text-sm text-gray-600">
-                        Private villa with garden view
-                      </div>
-                      <div className="mt-2 text-blue-900 font-semibold">
-                        ₹12,000 / night
-                      </div>
-                    </div>
-                    <div className="border rounded-lg p-4 cursor-pointer hover:border-blue-900 hover:bg-gray-50 transition-colors">
-                      <div className="font-medium text-lg mb-1">
-                        Premium Suite
-                      </div>
-                      <div className="text-sm text-gray-600">
-                        Spacious suite with balcony
-                      </div>
-                      <div className="mt-2 text-blue-900 font-semibold">
-                        ₹15,000 / night
-                      </div>
-                    </div>
-                  </div>
-                </div> */}
 
                 {/* Guest Information */}
                 <div className="grid md:grid-cols-2 gap-4">
                   <div>
                     <label className="block text-sm font-medium text-gray-700 mb-1">
-                      Full Name
+                      Full Name *
                     </label>
                     <input
                       type="text"
+                      name="name"
+                      value={formData.name}
+                      onChange={handleInputChange}
                       className="w-full border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-900 focus:border-transparent"
                       placeholder="Enter your full name"
                     />
                   </div>
                   <div>
                     <label className="block text-sm font-medium text-gray-700 mb-1">
-                      Email Address
+                      Email Address *
                     </label>
                     <input
                       type="email"
+                      name="email"
+                      value={formData.email}
+                      onChange={handleInputChange}
                       className="w-full border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-900 focus:border-transparent"
                       placeholder="Enter your email"
                     />
                   </div>
                   <div>
                     <label className="block text-sm font-medium text-gray-700 mb-1">
-                      Phone Number
+                      Phone Number *
                     </label>
                     <input
                       type="tel"
+                      name="phone"
+                      value={formData.phone}
+                      onChange={handleInputChange}
                       className="w-full border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-900 focus:border-transparent"
                       placeholder="Enter your phone number"
                     />
@@ -166,26 +258,46 @@ const BookNowButton: React.FC = () => {
                     </label>
                     <input
                       type="text"
+                      name="special_requests"
+                      value={formData.special_requests}
+                      onChange={handleInputChange}
                       className="w-full border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-900 focus:border-transparent"
                       placeholder="Any special requests?"
                     />
                   </div>
                 </div>
 
+                {/* Result Message */}
+                {result && (
+                  <div
+                    className={`p-3 rounded-md ${
+                      result.includes("successfully") ||
+                      result.includes("Successfully")
+                        ? "bg-green-50 text-green-800 border border-green-200"
+                        : result.includes("Sending")
+                        ? "bg-blue-50 text-blue-800 border border-blue-200"
+                        : "bg-red-50 text-red-800 border border-red-200"
+                    }`}
+                  >
+                    {result}
+                  </div>
+                )}
+
                 {/* Submit Button */}
                 <div className="mt-6">
                   <button
-                    type="button"
-                    style={{ backgroundColor: "#1e2939" }}
-                    className="hover:bg-[#16202f] text-white font-bold py-3 px-6 rounded-lg shadow-lg transition-all duration-300"
+                    onClick={onSubmit}
+                    disabled={isSubmitting}
+                    style={{
+                      backgroundColor: isSubmitting ? "#9ca3af" : "#1e2939",
+                    }}
+                    className="hover:bg-[#16202f] disabled:hover:bg-[#9ca3af] text-white font-bold py-3 px-6 rounded-lg shadow-lg transition-all duration-300 disabled:cursor-not-allowed"
                   >
-                    Book Your Stay Now
+                    {isSubmitting ? "Sending..." : "Book Your Stay Now"}
                   </button>
-                  {/* <p className="text-sm text-gray-500 mt-2 text-center">
-                    By clicking this button, you agree to our terms and
-                    conditions
-                  </p> */}
                 </div>
+
+                <div className="text-sm text-gray-600">* Required fields</div>
               </div>
             </div>
           </div>

@@ -59,7 +59,7 @@ const BookNowButton = () => {
     const submitData = new FormData();
 
     // Replace with your actual Web3Forms access key
-    submitData.append("access_key", "YOUR_ACCESS_KEY_HERE");
+    submitData.append("access_key", "4c2feffb-e996-42f1-906c-a2b95ae9b4e5");
 
     // Add form subject for better organization
     submitData.append("subject", "New Booking Request - Vanaashrya Resort");

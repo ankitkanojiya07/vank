@@ -1,5 +1,4 @@
 import React from "react";
-import MainLayout from "@/layouts/MainLayout";
 import SariskaBlogComponent from "@/components/blog/SariskaBlogComponent";
 import HeroSection from "@/components/common/HeroSection";
 import { heroSections } from "@/data/heroSections";

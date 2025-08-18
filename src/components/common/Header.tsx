@@ -53,11 +53,11 @@ const Header: React.FC = () => {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+      className={`fixed top-0 left-0 right-0 z-100 transition-all duration-300 ${
         isScrolled ? "bg-secondary-navy" : ""
       }`}
     >
-      <div className="container mx-auto px-4 py-4 flex items-center justify-between">
+      <div className="container mx-auto px-4 py-4 flex items-center md:flex-row flex-row-reverse justify-between">
         <button
           className={`size-10 rounded-full text-xs flex flex-col items-center justify-center p-2 transition-colors duration-300`}
           style={{ color: isScrolled ? "#ffffff" : "#212322" }}
@@ -108,7 +108,7 @@ const Header: React.FC = () => {
               <X />
             </button>
 
-            <ul className="flex flex-col gap-3 md:py-10 py-8   md:text-center">
+            <ul className="flex flex-col gap-3 md:py-10 py-8 text-center">
               {navItems.map((item) => (
                 <li key={item.href} onClick={() => setIsMenuOpen(false)}>
                   <Link

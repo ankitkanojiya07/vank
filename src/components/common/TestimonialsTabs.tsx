@@ -81,7 +81,7 @@ const TestimonialsTabs: React.FC = () => {
           </div>
 
           {/* Tab Content */}
-          <div className="bg-white h-full rounded-lg border border-gray-100 p-4 relative overflow-hidden">
+          <div className="bg-white rounded-lg border border-gray-100 p-4 relative overflow-hidden">
             {activeTab === 0 ? (
               /* Video Tab Content */
               <div className="flex flex-col items-center justify-center h-full space-y-4">
@@ -252,7 +252,7 @@ const TestimonialsTabs: React.FC = () => {
           </div>
         </div>
         {/* Right: Why Choose Us */}
-        <div className="flex-1 h-full">
+        <div className="flex-1">
           <div>
             <h2 className="text-2xl font-black text-muted mt-2 md:mt-0">
               Why Choose Our Hotel

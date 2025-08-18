@@ -172,7 +172,7 @@ const AmenitiesSection: React.FC = () => {
             initial="initial"
             whileInView="animate"
             viewport={{ once: true }}
-            className="background-color: #f4efea rounded-2xl p-8 lg:p-12"
+            className="background-color: #f4efea rounded-2xl lg:p-12"
           >
             <motion.h3
               variants={fadeInUp}

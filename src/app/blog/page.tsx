@@ -6,12 +6,12 @@ import { heroSections } from "@/data/heroSections";
 
 const page = () => {
   return (
-    <MainLayout>
+    <>
       <HeroSection {...heroSections.blog} />
       <section className="py-16 lg:py-24">
         <SariskaBlogComponent />
       </section>
-    </MainLayout>
+    </>
   );
 };
 

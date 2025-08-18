@@ -29,7 +29,7 @@ const RoomSection = () => {
 
   return (
     <div className="relative room-section overflow-hidden">
-      <section id="accommodations-section" className="py-20 relative z-10">
+      <section id="accommodations-section" className="py-20 relative">
         <div className="container mx-auto max-sm:px-4 max-w-7xl">
           <div className="space-y-2">
             <h4 className="text-secondary-navy tracking-wide text-4xl text-center font-medium">
@@ -47,14 +47,14 @@ const RoomSection = () => {
               palate.
             </p>
           </div>
-          <div className="max-w-5xl p-10 mx-auto border mt-16 relative border-primary">
-            <div className="absolute -top-[2.5rem] inset-0 left-1/2 -translate-x-1/2">
-              <div className="bg-background p-4 flex items-center justify-between max-w-xl w-full gap-10  text-foreground">
+          <div className="max-w-5xl md:p-10 p-4 py-10 mx-auto border mt-16 relative border-primary">
+            <div className="absolute -top-[2.5rem] inset-0 md:left-1/2 left-1 md:-translate-x-1/2">
+              <div className="bg-background p-4 flex items-center justify-between max-w-xl w-full gap-4 md:gap-10  text-foreground">
                 <button className="cursor-pointer">
                   <h6
                     onMouseEnter={() => handleActiveIdx(0)}
                     onClick={() => handleActiveIdx(0)}
-                    className={`uppercase flex flex-col leading-none justify-center items-center tracking-normal ${
+                    className={`uppercase flex flex-col gap-0.5 leading-none justify-center items-center tracking-normal ${
                       currentIndex === 0
                         ? "text-primary"
                         : "text-secondary-navy"
@@ -62,7 +62,7 @@ const RoomSection = () => {
                   >
                     <span className="text-sm">THE</span>
                     <span
-                      className={`-mt-2 text-xl tracking-widest ${
+                      className={`-mt-2 md:text-xl tracking-widest ${
                         currentIndex === 0 ? "font-black" : "font-semibold"
                       }`}
                     >
@@ -74,7 +74,7 @@ const RoomSection = () => {
                   <h6
                     onMouseEnter={() => handleActiveIdx(1)}
                     onClick={() => handleActiveIdx(1)}
-                    className={`uppercase flex flex-col leading-none justify-center items-center tracking-normal ${
+                    className={`uppercase flex flex-col gap-0.5 leading-none justify-center items-center tracking-normal ${
                       currentIndex === 1
                         ? "text-primary"
                         : "text-secondary-navy"
@@ -94,7 +94,7 @@ const RoomSection = () => {
                   <h6
                     onMouseEnter={() => handleActiveIdx(2)}
                     onClick={() => handleActiveIdx(2)}
-                    className={`uppercase flex flex-col leading-none justify-center items-center tracking-normal ${
+                    className={`uppercase flex flex-col gap-0.5 leading-none justify-center items-center tracking-normal ${
                       currentIndex === 2
                         ? "text-primary"
                         : "text-secondary-navy"
@@ -102,7 +102,7 @@ const RoomSection = () => {
                   >
                     <span className="text-base">the</span>
                     <span
-                      className={`-mt-2 text-xl ${
+                      className={`-mt-2 md:text-xl ${
                         currentIndex === 2 ? "font-black" : "font-semibold"
                       }`}
                     >

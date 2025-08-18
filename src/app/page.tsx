@@ -85,9 +85,9 @@ export default function Home() {
 
       <section id="about-com" className="py-20">
         <div className="container max-sm:px-4 mx-auto">
-          <div className="max-w-5xl p-10 relative border-2 w-full border-primary mx-auto">
+          <div className="max-w-5xl p-4 pt-10  md:p-10 relative border-2 w-full border-primary mx-auto">
             <div className="absolute -top-[3.5rem] bg-background text-foreground left-1/2 -translate-x-1/2">
-              <div className="flex flex-col items-center justify-center">
+              <div className="flex relative z-10 flex-col items-center justify-center">
                 <Image
                   src="/new_img/hotel.png"
                   alt="The Vanaashrya Resort"

@@ -48,11 +48,10 @@ const SariskaBlogComponent = () => {
             <div className="flex flex-col md:flex-row">
               {/* Image Section */}
               <div className="md:w-1/2 relative overflow-hidden group">
-                <div className="aspect-[16/10] md:aspect-[4/3] relative">
+                <div className="size-full relative">
                   <Image
                     width={600}
                     height={400}
-                    sizes="(max-width: 768px) 100vw, 50vw"
                     src={card.image}
                     alt={card.alt}
                     className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
@@ -90,17 +89,17 @@ const SariskaBlogComponent = () => {
                   </p>
                 </div>
 
-                <div className="flex items-center justify-between pt-4 border-t border-gray-100">
+                <div className="flex items-center flex-wrap-reverse md:flex-nowrap gap-2 justify-between pt-4 border-t border-gray-100">
                   <Link
                     href={card.href}
-                    className="inline-flex items-center bg-[#46141d] hover:bg-[#3a110f] text-white px-6 py-3 rounded-lg font-medium transition-all duration-200 hover:shadow-md space-x-2 group"
+                    className="inline-flex items-center md:w-fit w-full justify-center bg-[#46141d] hover:bg-[#3a110f] text-white px-6 py-3 rounded-lg font-medium transition-all duration-200 hover:shadow-md space-x-2 group"
                     aria-label={`Read more about ${card.title}`}
                   >
                     <span>Read More</span>
                     <ChevronRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
                   </Link>
 
-                  <div className="flex items-center text-gray-500 text-sm">
+                  <div className="flex items-center text-end text-gray-500 text-sm">
                     <Calendar className="w-4 h-4 mr-2" />
                     <time dateTime={card.date}>{formatDate(card.date)}</time>
                   </div>

@@ -54,7 +54,7 @@ const Footer: React.FC = () => {
   ];
 
   return (
-    <footer className="relative text-white">
+    <footer className="relative max-sm:px-3 text-white">
       {/* Background Image with Overlay using CSS */}
       <div
         className="absolute inset-0 w-full h-full z-0"
@@ -237,7 +237,7 @@ const Footer: React.FC = () => {
                 href="https://www.linkedin.com/in/ankitkanojiya07/" // Replace with actual LinkedIn
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-blue-400 hover:underline"
+                className="text-primary hover:underline"
               >
                 Ankit
               </a>{" "}
@@ -246,7 +246,7 @@ const Footer: React.FC = () => {
                 href="https://www.linkedin.com/in/sujeetkumar-tech/" // Replace with actual LinkedIn
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-blue-400 hover:underline"
+                className="text-primary hover:underline"
               >
                 Sujeet
               </a>

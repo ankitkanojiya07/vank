@@ -71,7 +71,7 @@ const ParkInfoCard: React.FC = () => {
         <ParkStats />
 
         {/* Quick Facts Section */}
-        <div className="rounded-3xl p-8 md:p-10 mb-12">
+        <div className="rounded-3xl mb-12">
           <h3 className="text-3xl md:text-4xl text-secondary-navy font-bold text-center mb-6">
             Quick Facts About Sariska
           </h3>

@@ -196,7 +196,7 @@ export const galleryImages: GalleryImage[] = [
     id: "tiger",
     title: "Tiger",
     caption: "Royal Bengal Tiger in Sariska Tiger Reserve",
-    image: "/gallery/tiger111.tif",
+    image: "/gallery/tiger111.webp",
     category: "activities",
     featured: false,
   },

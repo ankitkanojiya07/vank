@@ -8,7 +8,7 @@ import Image from "next/image";
 const SariskaBlogComponent = () => {
   const blogCards = [
     {
-      image: "/gallery/tiger111.tif",
+      image: "/gallery/tiger111.webp",
       alt: "Sariska Tiger Safari",
       location: "Alwar, Rajasthan",
       title: "Sariska Tiger Reserve - A Sanctuary of Serenity and Beauty",

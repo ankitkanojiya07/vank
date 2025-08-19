@@ -21,7 +21,7 @@ const ParkInfoCard: React.FC = () => {
       {/* Full Width Hero Image */}
       {/* <div className="relative w-full h-96 md:h-[500px] overflow-hidden group">
         <Image
-          src="/gallery/tiger111.TIF"
+          src="/gallery/tiger111.webp"
           alt="Sariska Tiger Reserve Landscape"
           width={1200}
           height={800}

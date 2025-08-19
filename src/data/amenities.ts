@@ -168,7 +168,7 @@ export const amenities: Amenity[] = [
     icon: "Camera",
     category: "safari",
     featured: true,
-    image: "/gallery/tiger111.tif",
+    image: "/gallery/tiger111.webp",
   },
   {
     id: "camel-safari",

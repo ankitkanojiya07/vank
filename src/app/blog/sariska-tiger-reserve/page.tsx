@@ -40,7 +40,7 @@ export default function SariskaTigerReserveBlog() {
               <Image
                 width={1200}
                 height={800}
-                src="/gallery/tiger111.tif"
+                src="/gallery/tiger111.webp"
                 alt="Sariska Tiger Safari"
                 className="absolute inset-0 w-full h-full object-cover"
               />

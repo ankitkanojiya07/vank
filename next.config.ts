@@ -1,9 +1,9 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  // Image optimization for static export
+  // Image optimization
   images: {
-    unoptimized: true, // CRITICAL: Required for static exports
+    unoptimized:true,
     remotePatterns: [
       {
         protocol: "https",
@@ -18,38 +18,45 @@ const nextConfig: NextConfig = {
         hostname: "images.unsplash.com",
       },
     ],
-    // Remove optimization-specific settings for static export
-    // formats: ["image/webp", "image/avif"], // Not needed with unoptimized
-    // deviceSizes: [640, 750, 828, 1080, 1200, 1920, 2048, 3840], // Not needed
-    // imageSizes: [16, 32, 48, 64, 96, 128, 256, 384], // Not needed
-    // minimumCacheTTL: 60 * 60 * 24 * 30, // Not needed for static
+    formats: ["image/webp", "image/avif"],
+    // deviceSizes: [640, 750, 828, 1080, 1200, 1920, 2048, 3840],
+    // imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
+    // minimumCacheTTL: 60 * 60 * 24 * 30, // 30 days
     dangerouslyAllowSVG: true,
     contentSecurityPolicy: "default-src 'self'; script-src 'none'; sandbox;",
   },
 
-  // Performance optimizations (keep these)
+  // Performance optimizations
   experimental: {
     optimizeCss: true,
     optimizeServerReact: true,
     optimizePackageImports: ["framer-motion", "lucide-react"],
   },
+  turbopack: {
+    rules: {
+      "*.svg": {
+        loaders: ["@svgr/webpack"],
+        as: "*.js",
+      },
+    },
+  },
 
-  // Remove turbopack for static exports - it's for development
-  // turbopack: {
-  //   rules: {
-  //     "*.svg": {
-  //       loaders: ["@svgr/webpack"],
-  //       as: "*.js",
-  //     },
-  //   },
-  // },
-
+  // Compression
   compress: true,
 
-  // Static export configuration
-  output: "export",
-  trailingSlash: true, // Recommended for static hosting
-  distDir: "out", // Default output directory for static export
+  // Redirects for better SEO
+  // // TypeScript configuration
+  // typescript: {
+  //   ignoreBuildErrors: false,
+  // },
+
+  // // ESLint configuration
+  // eslint: {
+  //   ignoreDuringBuilds: false,
+  // },
+
+  // Output configuration for deployment
+  output: "export", // Remove this if not using Docker/containerized deployment
 };
 
 export default nextConfig;

@@ -55,7 +55,7 @@ const nextConfig: NextConfig = {
   // },
 
   // Output configuration for deployment
-  // output: "export", // Remove this if not using Docker/containerized deployment
+  output: "export", // Remove this if not using Docker/containerized deployment
 };
 
 export default nextConfig;

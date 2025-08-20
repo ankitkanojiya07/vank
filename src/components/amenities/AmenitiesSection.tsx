@@ -32,7 +32,7 @@ const AmenitiesSection: React.FC = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
           {amenities
             .filter((amenity) => amenity.featured)
-            .map((amenity, index) => (
+            .map((amenity) => (
               <div key={amenity.id}>
                 <AmenityCard amenity={amenity} featured={true} />
               </div>
@@ -53,7 +53,7 @@ const AmenitiesSection: React.FC = () => {
               Recreation & Activities
             </h3>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {recreationAmenities.map((amenity, index) => (
+              {recreationAmenities.map((amenity) => (
                 <div key={amenity.id}>
                   <AmenityCard amenity={amenity} featured={false} />
                 </div>
@@ -67,7 +67,7 @@ const AmenitiesSection: React.FC = () => {
               Wildlife Safari
             </h3>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              {safariAmenities.map((amenity, index) => (
+              {safariAmenities.map((amenity) => (
                 <div key={amenity.id}>
                   <AmenityCard amenity={amenity} featured={false} />
                 </div>
@@ -81,7 +81,7 @@ const AmenitiesSection: React.FC = () => {
               Room Amenities
             </h3>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {accommodationAmenities.map((amenity, index) => (
+              {accommodationAmenities.map((amenity) => (
                 <div key={amenity.id}>
                   <AmenityCard amenity={amenity} featured={false} />
                 </div>

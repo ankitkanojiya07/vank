@@ -23,7 +23,7 @@ const GalleryPreview: React.FC = () => {
         <div
           className={`grid gap-3 sm:gap-4 md:gap-6 lg:grid-cols-4 md:grid-cols-3 grid-cols-1`}
         >
-          {getFeaturedGalleryImages().slice(0,14).map((item, index) => (
+          {getFeaturedGalleryImages().slice(0,14).map((item) => (
             <div
               key={item.id}
               className="relative rounded-lg sm:rounded-xl md:rounded-2xl overflow-hidden shadow-lg sm:shadow-xl group transition-all duration-300 cursor-pointer bg-white border border-gray-200 hover:shadow-2xl h-64 sm:h-72 md:h-80"

@@ -17,7 +17,7 @@ import { Loader } from "lucide-react";
 
 
 const LoadingSpinner = () => (
-  <div className="flex items-center justify-center h-96 w-full py-8">
+  <div className="flex items-center justify-center h-[640px] w-full py-8">
     <Loader className="animate-spin"/>
   </div>
 );
@@ -117,12 +117,12 @@ export default function Home() {
       </section>
 
       <section id="gallery-section" className="py-16 lg:py-24">
-        <Suspense>
+        <Suspense fallback={<LoadingSpinner />}>
           <GalleryPreview />
         </Suspense>
       </section>
 
-      <Suspense>
+      <Suspense fallback={<LoadingSpinner />}>
         <TestimonialsSection />
       </Suspense>
     </>

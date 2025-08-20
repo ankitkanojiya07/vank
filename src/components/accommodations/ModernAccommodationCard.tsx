@@ -1,10 +1,8 @@
-"use client";
-
-import React, { useState } from "react";
+import React from "react";
 import { Room } from "@/data/rooms";
 import { ArrowRight } from "lucide-react";
-import BookingModal from "../common/BookingModal";
 import Image from "next/image";
+import BookNowButton from "../common/BookNowButton";
 
 interface ModernAccommodationCardProps {
   room: Room;
@@ -13,7 +11,6 @@ interface ModernAccommodationCardProps {
 const ModernAccommodationCard: React.FC<ModernAccommodationCardProps> = ({
   room,
 }) => {
-  const [isBookingModalOpen, setIsBookingModalOpen] = useState(false);
 
   return (
     <>
@@ -46,20 +43,13 @@ const ModernAccommodationCard: React.FC<ModernAccommodationCardProps> = ({
               </span>
             )}
           </div>
-          <button
-            className="mt-3 px-2 py-3 text-sm flex gap-0.5 cursor-pointer items-center hover:underline text-muted "
-            onClick={() => setIsBookingModalOpen(true)}
-          >
-            Book Now <ArrowRight className="size-[0.9em]"/>
-          </button>
+          <BookNowButton className="mt-3 px-2 py-3 text-sm flex gap-0.5 cursor-pointer items-center hover:underline text-muted">
+            <>
+              Book Now <ArrowRight className="size-[0.9em]" />
+            </>
+          </BookNowButton>
         </div>
       </div>
-
-      {/* Booking Modal */}
-      <BookingModal
-        isOpen={isBookingModalOpen}
-        onClose={() => setIsBookingModalOpen(false)}
-      />
     </>
   );
 };

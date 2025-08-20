@@ -83,7 +83,7 @@ body {
   position: absolute;
   width: 300px;
   height: 395px;
-  background: url(/props04.png) center / contain no-repeat;
+  background: url(/final/props04.png) center / contain no-repeat;
 }
 
 .about-section::after {
@@ -92,11 +92,11 @@ body {
   position: absolute;
   width: 300px;
   height: 395px;
-  background: url(/props03.png) center / contain no-repeat;
+  background: url(/final/props03.png) center / contain no-repeat;
 }
 
 .room-section::before {
-  @apply top-[-5%] left-[-5%] scale-x-[-1] rotate-[-140deg] h-[395px] w-[300px] absolute block content-[""] bg-[url(/props08.png)] bg-center bg-contain bg-no-repeat md:opacity-100 opacity-50;
+  @apply top-[-5%] left-[-5%] scale-x-[-1] rotate-[-140deg] h-[395px] w-[300px] absolute block content-[""] bg-[url(/final/props08.png)] bg-center bg-contain bg-no-repeat md:opacity-100 opacity-50;
 }
 
 .room-section::after {
@@ -109,7 +109,7 @@ body {
   rotate: -59deg;
   right: -4rem;
   opacity: 0.8;
-  background: url(/props10.png) center / contain no-repeat;
+  background: url(/final/props10.png) center / contain no-repeat;
   /* @apply right-[-4rem] bottom-[-3rem] rotate-[-59deg] absolute content-[""] bg-[url(/props10.png)] bg-center bg-contain bg-no-repeat opacity-80; */
 }
 
@@ -124,5 +124,5 @@ body {
   opacity: 0.3;
   left: 0px;
   top: -160px;
-  background: url(/props09.png) center / contain no-repeat;
+  background: url(/final/props09.png) center / contain no-repeat;
 }

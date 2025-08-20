@@ -7,10 +7,6 @@ import { heroSections } from "@/data/heroSections";
 export default function GalleryPage() {
   return (
     <div className="gallery-container">
-      <HeroSection
-        {...heroSections.gallery}
-        videoSrc={heroSections.gallery.videoSrc}
-      />
       <section className="py-8 sm:py-12 md:py-16 lg:py-24 w-full overflow-hidden">
         <GallerySection />
       </section>

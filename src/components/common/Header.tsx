@@ -1,13 +1,13 @@
 "use client";
 
 import React, { useState, useEffect, useCallback } from "react";
-import Image from "next/image";
 import HeroButton from "../hero-button";
 import { MenuIcon, X } from "lucide-react";
 import Link from "next/link";
 
 import { motion } from "motion/react";
 import { usePathname } from "next/navigation";
+import Image from "next/image";
 
 const navItems = [
   { href: "/", label: "Home" },
@@ -69,12 +69,11 @@ const Header: React.FC = () => {
 
         <div className={`${isScrolled ? "w-24" : "w-50"} transition-all`}>
           <Image
-            src={"/gallery/logo.png"}
+            src={"/final/logo.png"}
             alt="Vanaashrya Logo"
             width={300}
             height={200}
             className="size-full drop-shadow-2xl object-contain"
-            unoptimized
           />
         </div>
 
@@ -92,12 +91,11 @@ const Header: React.FC = () => {
             <div className="flex justify-center pt-10 relative items-center">
               <div className="w-40">
                 <Image
-                  src={"/gallery/logo.png"}
+                  src={"/final/logo.png"}
                   alt="Vanaashrya Logo"
                   width={300}
                   height={200}
                   className="size-full drop-shadow-2xl object-contain "
-                  unoptimized
                 />
               </div>
             </div>

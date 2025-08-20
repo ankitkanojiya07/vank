@@ -1,6 +1,4 @@
 import React from "react";
-import MainLayout from "@/layouts/MainLayout";
-import HeroSection from "@/components/common/HeroSection";
 import {
   MapPin,
   Calendar,
@@ -11,16 +9,10 @@ import {
 } from "lucide-react";
 import Image from "next/image";
 
+
 export default function SariskaTigerReserveBlog() {
   return (
-    <MainLayout>
-      <HeroSection
-        image="/gallery/herobackground.jpg"
-        title="Sariska Tiger Reserve - A Sanctuary of Serenity and Beauty"
-        subtitle="A Sanctuary of Serenity and Beauty"
-        description="Near Alwar, Rajasthan, India"
-        height="h-[60vh]"
-      />
+    <>
       <section className="py-16 lg:py-24">
         <div className="max-w-6xl mx-auto bg-white rounded-2xl shadow-lg p-8">
           {/* Blog Header */}
@@ -40,7 +32,7 @@ export default function SariskaTigerReserveBlog() {
               <Image
                 width={1200}
                 height={800}
-                src="/gallery/tiger111.webp"
+                src="/final/gallery/tiger111.webp"
                 alt="Sariska Tiger Safari"
                 className="absolute inset-0 w-full h-full object-cover"
               />
@@ -247,6 +239,6 @@ export default function SariskaTigerReserveBlog() {
           </div>
         </div>
       </section>
-    </MainLayout>
+    </>
   );
 }

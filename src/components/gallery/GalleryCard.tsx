@@ -7,6 +7,7 @@ import { simpleCardHover } from "@/lib/framer";
 import { ZoomIn, X } from "lucide-react";
 import Image from "next/image";
 
+
 interface GalleryCardProps {
   image: GalleryImage;
   featured?: boolean;

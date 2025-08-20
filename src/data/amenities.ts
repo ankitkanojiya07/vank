@@ -22,7 +22,7 @@ export const amenities: Amenity[] = [
     icon: "UtensilsCrossed",
     category: "dining",
     featured: true,
-    image: "/gallery/basil11.jpg",
+    image: "/final/gallery/basil11.webp",
   },
   {
     id: "woods-wellness",
@@ -31,7 +31,7 @@ export const amenities: Amenity[] = [
     icon: "Flower",
     category: "wellness",
     featured: true,
-    image: "/gallery/evening.jpg",
+    image: "/final/gallery/evening-min.jpg",
   },
   {
     id: "cloud9-bar",
@@ -41,7 +41,7 @@ export const amenities: Amenity[] = [
     icon: "Wine",
     category: "dining",
     featured: true,
-    image: "/new_img/feature_4.jpg",
+    image: "/final/new_img/feature_4-min.jpg",
   },
   {
     id: "games-room",
@@ -51,7 +51,7 @@ export const amenities: Amenity[] = [
     icon: "Gamepad2",
     category: "recreation",
     featured: true,
-    image: "/gallery/gal6.jpg",
+    image: "/final/gallery/gal6-min.jpg",
   },
   {
     id: "gym",
@@ -61,7 +61,7 @@ export const amenities: Amenity[] = [
     icon: "Dumbbell",
     category: "wellness",
     featured: true,
-    image: "/gallery/GYM.jpg",
+    image: "/final/gallery/GYM.jpg",
   },
   {
     id: "spa-vanasutra",
@@ -71,7 +71,7 @@ export const amenities: Amenity[] = [
     icon: "Flower",
     category: "wellness",
     featured: true,
-    image: "/gallery/SPA-VANASUTRA.jpg",
+    image: "/final/gallery/SPA-VANASUTRA.jpg",
   },
   {
     id: "swimming-pool",
@@ -80,7 +80,7 @@ export const amenities: Amenity[] = [
     icon: "Waves",
     category: "recreation",
     featured: true,
-    image: "/gallery/swing.jpg",
+    image: "/final/gallery/swing.jpg",
   },
   {
     id: "lounge-bar",
@@ -90,7 +90,7 @@ export const amenities: Amenity[] = [
     icon: "Wine",
     category: "dining",
     featured: false,
-    image: "/gallery/CLOUD-9.jpg",
+    image: "/final/gallery/CLOUD-9-min.jpg",
   },
   {
     id: "bonfire",
@@ -100,7 +100,7 @@ export const amenities: Amenity[] = [
     icon: "Flame",
     category: "recreation",
     featured: true,
-    image: "/gallery/folkmusic.png",
+    image: "/final/gallery/folkmusic-min.png",
   },
   {
     id: "indoor-games",
@@ -110,7 +110,7 @@ export const amenities: Amenity[] = [
     icon: "Flame",
     category: "recreation",
     featured: false,
-    image: "/gallery/gal10.JPG",
+    image: "/final/gallery/gal10.JPG",
   },
   {
     id: "wifi",
@@ -120,7 +120,7 @@ export const amenities: Amenity[] = [
     icon: "Wifi",
     category: "connectivity",
     featured: false,
-    image: "/gallery/experience.jpg",
+    image: "/final/gallery/experience-min.jpg",
   },
   {
     id: "room-service",
@@ -130,7 +130,7 @@ export const amenities: Amenity[] = [
     icon: "Bell",
     category: "accommodation",
     featured: false,
-    image: "/new_img/ho.jpg",
+    image: "/final/new_img/ho-min.jpg",
   },
   {
     id: "air-conditioning",
@@ -140,17 +140,8 @@ export const amenities: Amenity[] = [
     icon: "Snowflake",
     category: "accommodation",
     featured: false,
-    image: "/new_img/ac.jpg",
+    image: "/final/new_img/ac-min.jpg",
   },
-  // {
-  //   id: "horse-riding",
-  //   name: "Horse Riding",
-  //   description: "Horse riding experiences through the wilderness and local villages with expert guides.",
-  //   icon: "Horse",
-  //   category: "recreation",
-  //   featured: false,
-  //   image: "/gallery/CYCLING.jpg"
-  // },
   {
     id: "nature-walks",
     name: "Nature Walks",
@@ -159,7 +150,7 @@ export const amenities: Amenity[] = [
     icon: "TreePine",
     category: "safari",
     featured: false,
-    image: "/gallery/VILAGE-WALK.jpg",
+    image: "/final/gallery/VILAGE-WALK.jpg",
   },
   {
     id: "jungle-safari",
@@ -168,7 +159,7 @@ export const amenities: Amenity[] = [
     icon: "Camera",
     category: "safari",
     featured: true,
-    image: "/gallery/tiger111.webp",
+    image: "/final/gallery/tiger111.webp",
   },
   {
     id: "camel-safari",
@@ -178,7 +169,7 @@ export const amenities: Amenity[] = [
     icon: "Camera",
     category: "safari",
     featured: false,
-    image: "/gallery/cal.jpg",
+    image: "/final/gallery/cal.jpg",
   },
   {
     id: "cycling",
@@ -188,7 +179,7 @@ export const amenities: Amenity[] = [
     icon: "Bike",
     category: "recreation",
     featured: false,
-    image: "/gallery/CYCLING.jpg",
+    image: "/final/gallery/CYCLING-min.jpg",
   },
   {
     id: "hiking",
@@ -198,7 +189,7 @@ export const amenities: Amenity[] = [
     icon: "Mountain",
     category: "recreation",
     featured: false,
-    image: "/gallery/HIKING.jpg",
+    image: "/final/gallery/HIKING.jpg",
   },
 ];
 

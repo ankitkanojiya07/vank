@@ -94,7 +94,7 @@ const TestimonialsTabs: React.FC = () => {
                     >
                       {/* Thumbnail Image */}
                       <img
-                        src="/gallery/slo.JPG"
+                        src="/final/gallery/slo.JPG"
                         alt="Hotel video thumbnail"
                         className="w-full h-full object-cover"
                         onError={(e) => {
@@ -144,9 +144,9 @@ const TestimonialsTabs: React.FC = () => {
                       onPlay={handleVideoPlay}
                       onPause={handleVideoPause}
                       onEnded={handleVideoPause}
-                      poster="/gallery/slo.jpg"
+                      poster="/final/gallery/slo.jpg"
                     >
-                      <source src="/gallery/vans.webm" type="video/mp4" />
+                      <source src="/final/gallery/vans.webm" type="video/webm" />
                       {/* <source src="/videos/hotel-tour.webm" type="video/webm" /> */}
                       Your browser does not support the video tag.
                     </video>

@@ -3,6 +3,8 @@ import "./globals.css";
 
 import {Caveat, Playfair} from "next/font/google";
 import MainLayout from "@/layouts/MainLayout";
+import HeroSection from "@/components/common/HeroSection";
+import { heroSections } from "@/data/heroSections";
 
 export const metadata: Metadata = {
   title: "Vanaashrya Resort - Luxury Wildlife Resort in Sariska",
@@ -79,7 +81,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${playFair.variable} ${caveat.variable} antialiased`}>
-        <MainLayout>{children}</MainLayout>
+        <MainLayout>
+          <HeroSection {...heroSections.home} />
+
+          {children}
+        </MainLayout>
       </body>
     </html>
   );

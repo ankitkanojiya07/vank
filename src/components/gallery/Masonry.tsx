@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React from "react";
 import Image from "next/image";
 import { GalleryImage } from "@/data/gallery";
 
@@ -19,7 +19,6 @@ const Grid: React.FC<GridProps> = ({
   scaleOnHover = true,
   colorShiftOnHover = false,
 }) => {
-  const itemRefs = useRef<(HTMLDivElement | null)[]>([]);
 
   // Generate grid columns class based on columns prop
   const getGridCols = (cols: number) => {
@@ -41,12 +40,9 @@ const Grid: React.FC<GridProps> = ({
           columns
         )} gap-2 sm:gap-4 md:gap-6 w-full`}
       >
-        {items.map((item, index) => (
+        {items.map((item) => (
           <div
             key={item.id}
-            ref={(el) => {
-              itemRefs.current[index] = el;
-            }}
             className={`grid-item relative rounded-lg sm:rounded-xl md:rounded-2xl overflow-hidden shadow-lg sm:shadow-xl group transition-all duration-300 cursor-pointer bg-white border border-gray-200 hover:shadow-2xl`}
           >
             <div

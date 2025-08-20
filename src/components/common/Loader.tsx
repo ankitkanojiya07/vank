@@ -3,6 +3,7 @@
 import React from 'react';
 import Image from 'next/image';
 
+
 const Loader: React.FC = () => {
   return (
     <div
@@ -24,13 +25,12 @@ const Loader: React.FC = () => {
     >
       <div className="loader-logo-container mb-8">
         <Image
-          src="/gallery/logo.png"
+          src="/final/logo.png"
           alt="Vanaashrya Logo"
           width={180}
           height={46}
           className="animate-pulse"
           style={{ filter: 'brightness(0) saturate(100%)' }}
-          priority
           sizes="180px"
         />
       </div>

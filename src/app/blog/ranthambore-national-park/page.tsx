@@ -1,19 +1,10 @@
 import React from "react";
-import MainLayout from "@/layouts/MainLayout";
-import HeroSection from "@/components/common/HeroSection";
 import { MapPin, Calendar, Camera, TreePine, Mountain } from "lucide-react";
 import Image from "next/image";
 
 export default function RanthamboreNationalParkBlog() {
   return (
-    <MainLayout>
-      <HeroSection
-        image="/gallery/herobackground.jpg"
-        title="Ranthambore National Park - The Land of the Tiger"
-        subtitle="The Land of the Tiger"
-        description="Sawai Madhopur, Rajasthan, India"
-        height="h-[60vh]"
-      />
+    <>
       <section className="py-16 lg:py-24">
         <div className="max-w-6xl mx-auto bg-white rounded-2xl shadow-lg p-8">
           {/* Blog Header */}
@@ -31,10 +22,9 @@ export default function RanthamboreNationalParkBlog() {
           <div className="relative mb-12 rounded-2xl overflow-hidden shadow-2xl">
             <div className="aspect-[16/9] relative flex items-center justify-center">
               <Image
-                // sizes="100vw"
                 width={1200}
                 height={800}
-                src="/gallery/gal7.jpg"
+                src="/final/gallery/gal7.jpg"
                 alt="Jungle Safari Adventure"
                 className="absolute inset-0 w-full h-full object-cover"
               />
@@ -204,6 +194,6 @@ export default function RanthamboreNationalParkBlog() {
           </div>
         </div>
       </section>
-    </MainLayout>
+    </>
   );
 }

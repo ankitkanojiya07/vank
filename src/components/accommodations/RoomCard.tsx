@@ -1,19 +1,14 @@
-"use client";
-
-import React, { useState } from "react";
-import { motion } from "framer-motion";
+import React from "react";
 import { Users, Square, Wifi, Coffee, Car, Calendar, Check } from "lucide-react";
 import { Room } from "@/data/rooms";
-import { cardHover } from "@/lib/framer";
-import BookingModal from "../common/BookingModal";
 import Link from 'next/link';
+import BookNowButton from "../common/BookNowButton";
 
 interface RoomCardProps {
   room: Room;
 }
 
 const RoomCard: React.FC<RoomCardProps> = ({ room }) => {
-  const [isBookingModalOpen, setIsBookingModalOpen] = useState(false);
 
   const amenityIcons: { [key: string]: React.ComponentType<any> } = {
     'WiFi': Wifi,
@@ -21,30 +16,9 @@ const RoomCard: React.FC<RoomCardProps> = ({ room }) => {
     'Room Service': Car,
   };
 
-  // const [currentImageIndex, setCurrentImageIndex] = useState(0);
-
-  // const amenityIcons: { [key: string]: React.ComponentType<any> } = {
-  //   'WiFi': Wifi,
-  //   'Tea/Coffee Maker': Coffee,
-  //   'Room Service': Car,
-  // };
-
-  // const nextImage = () => {
-  //   setCurrentImageIndex((prev) => 
-  //     prev === room.images.length - 1 ? 0 : prev + 1
-  //   );
-  // };
-
-  // const previousImage = () => {
-  //   setCurrentImageIndex((prev) => 
-  //     prev === 0 ? room.images.length - 1 : prev - 1
-  //   );
-  // };
-
   return (
     <>
-      <motion.div
-        whileHover={cardHover}
+      <div
         className="relative rounded-2xl border border-gray-200 shadow-lg overflow-hidden min-h-[420px] flex flex-col justify-end transition-transform duration-300 hover:scale-105 hover:shadow-2xl group"
         style={{
           backgroundImage:
@@ -127,14 +101,16 @@ const RoomCard: React.FC<RoomCardProps> = ({ room }) => {
 
           {/* Actions */}
           <div className="flex flex-col sm:flex-row gap-4">
-            <button
-              className="flex-1 bg-[#1a2238] hover:bg-[#232323] text-white py-3 px-4 rounded-lg font-semibold transition-colors duration-300 flex items-center justify-center space-x-2 shadow-md group-hover:shadow-[#bfa76f]/40 group-hover:ring-2 group-hover:ring-[#bfa76f]"
-              onClick={() => setIsBookingModalOpen(true)}
+            <BookNowButton className="flex-1 bg-[#1a2238] hover:bg-[#232323] text-white py-3 px-4 rounded-lg font-semibold transition-colors duration-300 flex items-center justify-center space-x-2 shadow-md group-hover:shadow-[#bfa76f]/40 group-hover:ring-2 group-hover:ring-[#bfa76f]">
+              <>
+                <Calendar className="w-4 h-4" />
+                <span>Book Now</span>
+              </>
+            </BookNowButton>
+            <Link
+              href="/amenities"
+              className="px-4 py-3 border-2 border-[#1a2238] text-[#1a2238] hover:bg-[#1a2238] hover:text-white rounded-lg font-semibold transition-all duration-300 bg-black/20 backdrop-blur-sm flex items-center justify-center"
             >
-              <Calendar className="w-4 h-4" />
-              <span>Book Now</span>
-            </button>
-            <Link href="/amenities" className="px-4 py-3 border-2 border-[#1a2238] text-[#1a2238] hover:bg-[#1a2238] hover:text-white rounded-lg font-semibold transition-all duration-300 bg-black/20 backdrop-blur-sm flex items-center justify-center">
               Details
             </Link>
           </div>
@@ -152,13 +128,8 @@ const RoomCard: React.FC<RoomCardProps> = ({ room }) => {
             </span>
           </div>
         </div>
-      </motion.div>
+      </div>
 
-      {/* Booking Modal */}
-      <BookingModal
-        isOpen={isBookingModalOpen}
-        onClose={() => setIsBookingModalOpen(false)}
-      />
     </>
   );
 };

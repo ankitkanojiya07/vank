@@ -1,7 +1,5 @@
-"use client";
 import React from "react";
 import Link from "next/link";
-import { motion } from "framer-motion";
 import {
   Phone,
   Mail,
@@ -11,8 +9,8 @@ import {
   Linkedin,
   ExternalLink,
 } from "lucide-react";
-import { fadeInUp, staggerContainer } from "@/lib/framer";
 import Image from "next/image";
+
 
 const Footer: React.FC = () => {
   const currentYear = new Date().getFullYear();
@@ -59,26 +57,21 @@ const Footer: React.FC = () => {
       <div
         className="absolute inset-0 w-full h-full z-0"
         style={{
-          backgroundImage: "url('/gallery/footer-bg.jpg')",
+          backgroundImage: "url('/final/gallery/footer-bg-min.jpg')",
           backgroundSize: "cover",
           backgroundPosition: "center",
         }}
       />
       <div className="relative container mx-auto px-4 py-8 sm:py-12 z-10">
-        <motion.div
-          variants={staggerContainer}
-          initial="initial"
-          whileInView="animate"
-          viewport={{ once: true }}
+        <div
           className="flex flex-col gap-10 sm:gap-12 md:grid md:grid-cols-2 lg:grid-cols-4 md:gap-8"
         >
           {/* Brand & Description */}
-          <motion.div
-            variants={fadeInUp}
+          <div
             className="flex flex-col items-center md:items-start text-center md:text-left lg:col-span-1"
           >
             <Image
-              src="/gallery/logo.png"
+              src="/final/logo.png"
               alt="Vanaashrya Logo"
               width={140}
               height={36}
@@ -106,13 +99,12 @@ const Footer: React.FC = () => {
                 );
               })}
             </div>
-          </motion.div>
+          </div>
 
           {/* Quick Links & Contact Info Row on Mobile, grid on md+ */}
           <div className="w-full flex flex-row justify-between gap-6 md:contents">
             {/* Quick Links */}
-            <motion.div
-              variants={fadeInUp}
+            <div
               className="flex-1 flex flex-col items-start text-left"
             >
               <h4 className="text-base sm:text-lg font-semibold mb-4 sm:mb-6">
@@ -130,10 +122,9 @@ const Footer: React.FC = () => {
                   </li>
                 ))}
               </ul>
-            </motion.div>
+            </div>
             {/* Contact Information */}
-            <motion.div
-              variants={fadeInUp}
+            <div
               className="flex-1 flex flex-col items-end text-right"
             >
               <h4 className="text-base sm:text-lg font-semibold mb-4 sm:mb-6">
@@ -170,12 +161,11 @@ const Footer: React.FC = () => {
                   </a>
                 </div>
               </div>
-            </motion.div>
+            </div>
           </div>
 
           {/* More Hotels */}
-          <motion.div
-            variants={fadeInUp}
+          <div
             className="flex flex-col items-center md:items-start text-center md:text-left"
           >
             <h4 className="text-base sm:text-lg font-semibold mb-4 sm:mb-6">
@@ -194,15 +184,11 @@ const Footer: React.FC = () => {
                 </li>
               ))}
             </ul>
-          </motion.div>
-        </motion.div>
+          </div>
+        </div>
 
         {/* Bottom Section */}
-        <motion.div
-          variants={fadeInUp}
-          initial="initial"
-          whileInView="animate"
-          viewport={{ once: true }}
+        <div
           className="border-t border-gray-800 mt-8 pt-6 flex flex-col items-center text-center gap-4 sm:gap-0 sm:block"
         >
           <div className="w-full flex flex-col sm:flex-row justify-between items-center gap-2 sm:gap-0">
@@ -216,18 +202,6 @@ const Footer: React.FC = () => {
               >
                 Privacy Policy
               </a>
-              {/* <a
-                href="#"
-                className="text-gray-400 hover:text-[#bfa76f] transition-colors duration-200"
-              >
-                Terms of Service
-              </a> */}
-              {/* <a
-                href="#"
-                className="text-gray-400 hover:text-[#bfa76f] transition-colors duration-200"
-              >
-                Cancellation Policy
-              </a> */}
             </div>
           </div>
           <div className="mt-3 pt-3 border-t border-gray-800 w-full">
@@ -252,7 +226,7 @@ const Footer: React.FC = () => {
               </a>
             </p>
           </div>
-        </motion.div>
+        </div>
       </div>
     </footer>
   );

@@ -1,13 +1,11 @@
-"use client";
 import React from "react";
 import { Calendar } from "lucide-react";
 import { parkInfo } from "@/data/parkInfo";
 import Image from "next/image";
 import { ViewMoreCursor } from "../view-more-cursor";
-// import BookingModal from "../common/BookingModal";
+
 
 const ParkInfoCard: React.FC = () => {
-  // const [isBookingModalOpen, setIsBookingModalOpen] = useState(false);
 
   const quickFacts = [
     `Established: ${parkInfo.established}`,
@@ -18,20 +16,6 @@ const ParkInfoCard: React.FC = () => {
 
   return (
     <>
-      {/* Full Width Hero Image */}
-      {/* <div className="relative w-full h-96 md:h-[500px] overflow-hidden group">
-        <Image
-          src="/gallery/tiger111.webp"
-          alt="Sariska Tiger Reserve Landscape"
-          width={1200}
-          height={800}
-          sizes="100vw"
-          className="object-cover w-full h-full transition-transform duration-500 group-hover:scale-105"
-        />
-        <div className="absolute inset-0 bg-gradient-to-t" />
-        <div className="absolute inset-0 bg-gradient-to-r from-black/20 to-transparent" />
-      </div> */}
-
       {/* Content Section with Container */}
       <div className="relative w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         {/* Title & Description */}
@@ -112,7 +96,7 @@ function ParkStats() {
       <ViewMoreCursor>
         <div className="bg-white size-full relative overflow-hidden rounded-md p-4 flex flex-col justify-center items-center text-center border border-gray-200 shadow-lg">
           <Image
-            src={"/new_img/tiger_1.png"}
+            src={"/final/new_img/tiger_1-min.png"}
             alt="Tiger"
             width={200}
             height={200}
@@ -129,7 +113,7 @@ function ParkStats() {
       <ViewMoreCursor>
         <div className="bg-white size-full relative overflow-hidden rounded-lg md:p-6 p-4 flex flex-col items-center text-center border border-gray-200 shadow-sm">
           <Image
-            src={"/new_img/travel.png"}
+            src={"/final/new_img/travel-min.png"}
             alt="Tiger"
             width={200}
             height={200}
@@ -147,7 +131,7 @@ function ParkStats() {
       <ViewMoreCursor>
         <div className="bg-white size-full relative overflow-hidden rounded-lg p-6 flex flex-col items-center text-center border border-gray-200 shadow-sm">
           <Image
-            src={"/new_img/forest.png"}
+            src={"/final/new_img/forest-min.png"}
             alt="Tiger"
             width={200}
             height={200}
@@ -165,7 +149,7 @@ function ParkStats() {
       <ViewMoreCursor>
         <div className="bg-white size-full relative overflow-hidden rounded-lg p-6 flex flex-col items-center text-center border border-gray-200 shadow-sm">
           <Image
-            src={"/new_img/time.png"}
+            src={"/final/new_img/time-min.png"}
             alt="Tiger"
             width={200}
             height={200}

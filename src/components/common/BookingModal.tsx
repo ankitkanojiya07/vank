@@ -2,12 +2,13 @@
 
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { X, Calendar, Users, Phone, Mail, User } from 'lucide-react';
+import { X, Calendar, Users, Phone, Mail, User, ArrowRight } from 'lucide-react';
 import { modalVariants, backdropVariants } from '@/lib/framer';
 
 interface BookingModalProps {
-  isOpen: boolean;
-  onClose: () => void;
+  isOpen?: boolean;
+  onClose?: () => void;
+  showButton?: React.ReactNode;
 }
 
 interface BookingForm {
@@ -21,7 +22,7 @@ interface BookingForm {
   specialRequests: string;
 }
 
-const BookingModal: React.FC<BookingModalProps> = ({ isOpen, onClose }) => {
+const BookingModal: React.FC<BookingModalProps> = ({ isOpen, onClose, showButton }) => {
   const [formData, setFormData] = useState<BookingForm>({
     name: '',
     email: '',
@@ -32,6 +33,14 @@ const BookingModal: React.FC<BookingModalProps> = ({ isOpen, onClose }) => {
     roomType: '',
     specialRequests: ''
   });
+  const [isInternalOpen, setIsInternalOpen] = useState(isOpen ? isOpen : false);
+
+
+  const handleToggle = (open:boolean) => {
+    setIsInternalOpen(open);
+    if(!open)
+      onClose?.();
+  };
 
   const [isSubmitting, setIsSubmitting] = useState(false);
 
@@ -69,7 +78,7 @@ const BookingModal: React.FC<BookingModalProps> = ({ isOpen, onClose }) => {
       specialRequests: ''
     });
     setIsSubmitting(false);
-    onClose();
+    onClose?.();
 
     // Show success message (you might want to use a toast notification)
     alert('Thank you for your booking request! We will contact you shortly to confirm your reservation.');
@@ -89,7 +98,15 @@ const BookingModal: React.FC<BookingModalProps> = ({ isOpen, onClose }) => {
 
   return (
     <AnimatePresence>
-      {isOpen && (
+      {showButton && (
+        <button
+          onClick={() => handleToggle(true)}
+          className="mt-3 px-2 py-3 text-sm flex gap-0.5 cursor-pointer items-center hover:underline text-muted "
+        >
+          Book Now <ArrowRight className="size-[0.9em]" />
+        </button>
+      )}
+      {isInternalOpen && (
         <motion.div
           variants={backdropVariants}
           initial="initial"
@@ -108,7 +125,9 @@ const BookingModal: React.FC<BookingModalProps> = ({ isOpen, onClose }) => {
           >
             {/* Header */}
             <div className="flex items-center justify-between p-6 border-b border-gray-200">
-              <h2 className="text-2xl font-bold text-gray-800">Book Your Stay</h2>
+              <h2 className="text-2xl font-bold text-gray-800">
+                Book Your Stay
+              </h2>
               <button
                 onClick={onClose}
                 className="p-2 hover:bg-gray-100 rounded-full transition-colors duration-200"
@@ -182,9 +201,9 @@ const BookingModal: React.FC<BookingModalProps> = ({ isOpen, onClose }) => {
                       required
                       className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#1a2238] focus:border-transparent"
                     >
-                      {[1, 2, 3, 4, 5, 6].map(num => (
+                      {[1, 2, 3, 4, 5, 6].map((num) => (
                         <option key={num} value={num.toString()}>
-                          {num} Guest{num > 1 ? 's' : ''}
+                          {num} Guest{num > 1 ? "s" : ""}
                         </option>
                       ))}
                     </select>
@@ -238,7 +257,7 @@ const BookingModal: React.FC<BookingModalProps> = ({ isOpen, onClose }) => {
                     className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#1a2238] focus:border-transparent"
                   >
                     <option value="">Select room type (optional)</option>
-                    {roomTypes.map(type => (
+                    {roomTypes.map((type) => (
                       <option key={type} value={type}>
                         {type}
                       </option>
@@ -275,7 +294,7 @@ const BookingModal: React.FC<BookingModalProps> = ({ isOpen, onClose }) => {
                     disabled={isSubmitting}
                     className="px-6 py-2 bg-[#1a2238] text-white rounded-md hover:bg-[#232323] disabled:opacity-50 disabled:cursor-not-allowed transition-colors duration-200"
                   >
-                    {isSubmitting ? 'Submitting...' : 'Submit Booking Request'}
+                    {isSubmitting ? "Submitting..." : "Submit Booking Request"}
                   </button>
                 </div>
               </form>

@@ -1,8 +1,8 @@
 "use client";
-import React, { useState } from "react";
+import React, { PropsWithChildren, useState } from "react";
 import { X } from "lucide-react";
 
-const BookNowButton = () => {
+const BookNowButton = ({children , className}: PropsWithChildren<{className?: string}>) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [result, setResult] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -110,26 +110,34 @@ const BookNowButton = () => {
     }
   };
 
+  
+
   return (
     <>
       {/* Fixed Book Now Button - Professional positioning */}
-      <div className="fixed bottom-6 right-6 z-40">
-        <button
-          onClick={openModal}
-          style={{ backgroundColor: "#1e2939" }}
-          className="hover:bg-[#16202f] text-white font-semibold py-2 px-4 rounded-md shadow hover:shadow-lg transition-all duration-300 flex items-center justify-center"
-          aria-label="Book Now"
-        >
-          <span className="mr-2 text-sm tracking-wide">BOOK NOW</span>
-          <svg className="w-3 h-3" viewBox="0 0 20 20" fill="currentColor">
-            <path
-              fillRule="evenodd"
-              d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z"
-              clipRule="evenodd"
-            />
-          </svg>
+      {children ? (
+        <button onClick={openModal} className={className}>
+          {children}
         </button>
-      </div>
+      ) : (
+        <div className="fixed bottom-6 right-6 z-40">
+          <button
+            onClick={openModal}
+            style={{ backgroundColor: "#1e2939" }}
+            className="hover:bg-[#16202f] text-white font-semibold py-2 px-4 rounded-md shadow hover:shadow-lg transition-all duration-300 flex items-center justify-center"
+            aria-label="Book Now"
+          >
+            <span className="mr-2 text-sm tracking-wide">BOOK NOW</span>
+            <svg className="w-3 h-3" viewBox="0 0 20 20" fill="currentColor">
+              <path
+                fillRule="evenodd"
+                d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z"
+                clipRule="evenodd"
+              />
+            </svg>
+          </button>
+        </div>
+      )}
 
       {/* Modal Overlay */}
       {isModalOpen && (

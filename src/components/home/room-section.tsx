@@ -5,15 +5,15 @@ import React, { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "motion/react";
 
 const roomImg = [
-  "/new_img/room_1.jpg",
-  "/new_img/room_2.jpg",
-  "/new_img/room_3.jpg",
-  "/new_img/room_4.jpg",
+  "/final/new_img/room_1-min.jpg",
+  "/final/new_img/room_2-min.jpg",
+  "/final/new_img/room_3-min.jpg",
+  "/final/new_img/room_4-min.jpg",
 ];
 
-const barImg = ["/new_img/bar3.jpg", "/new_img/bar3.jpg"];
+const barImg = ["/final/new_img/bar3-min.jpg", "/final/new_img/bar3-min.jpg"];
 
-const rooftopImg = ["/new_img/rooftop_1.JPG", "/new_img/rooftop_2.JPG"];
+const rooftopImg = ["/final/new_img/rooftop_1-min.JPG", "/final/new_img/rooftop_2-min.JPG"];
 
 const imgData = [barImg, roomImg, rooftopImg];
 
@@ -161,9 +161,6 @@ const ImageCarouselCrossfade = ({ imgs }: { imgs: string[] }) => {
           alt={`cottage room ${currentIndex + 1}`}
           width={1200}
           height={800}
-          quality={95}
-          priority
-          // unoptimized
           className="absolute inset-0 w-full h-full object-cover"
         />
       </AnimatePresence>

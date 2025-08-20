@@ -31,6 +31,7 @@ const nextConfig: NextConfig = {
     optimizeCss: true,
     optimizeServerReact: true,
     optimizePackageImports: ["framer-motion", "lucide-react"],
+    reactCompiler:true
   },
   turbopack: {
     rules: {
@@ -57,6 +58,7 @@ const nextConfig: NextConfig = {
 
   // Output configuration for deployment
   output: "export", // Remove this if not using Docker/containerized deployment
+
 };
 
 export default nextConfig;

@@ -1,23 +1,30 @@
-import React from "react";
-import HeroSection from "@/components/common/HeroSection";
-import { heroSections } from "@/data/heroSections";
-// import ParkInfoCard from "@/components/about/ParkInfoCard";
+import React, { Suspense } from "react";
 import RoomsList from "@/components/accommodations/RoomsList";
-// import ModernAmenitiesSection from "@/components/amenities/ModernAmenitiesSection";
-// import ExperiencesPreview from "@/components/common/ExperiencesPreview";
-import GalleryPreview from "@/components/gallery/GalleryPreview";
-import TestimonialsSection from "@/components/common/TestimonialsSection";
+const GalleryPreview = React.lazy(
+  () => import("@/components/gallery/GalleryPreview")
+);
+const TestimonialsSection = React.lazy(
+  () => import("@/components/common/TestimonialsSection")
+);
+
 import FeatureCarousel from "@/components/feature-carousel";
 import Link from "next/link";
 import RoomSection from "@/components/home/room-section";
 import ParkInfoCard from "@/components/about/ParkInfoCard";
 import Image from "next/image";
+import { Loader } from "lucide-react";
+
+
+
+const LoadingSpinner = () => (
+  <div className="flex items-center justify-center h-96 w-full py-8">
+    <Loader className="animate-spin"/>
+  </div>
+);
 
 export default function Home() {
   return (
     <>
-      <HeroSection {...heroSections.home} videoSrc="/images/video.mp4" />
-
       <div className="container mx-auto py-20 px-3 lg:px-10 overflow-hidden">
         <section
           className="py-10 z-10 md:before:opacity-70 before:opacity-50    about-section relative before:right-[-75px] before:bottom-[-5.96rem] before:z-[-1] after:z-[-1] md:after:opacity-80 after:opacity-50 after:-top-[25%] after:left-[-75px] after:rotate-[-20deg] after:scale-y-[-1]"
@@ -89,20 +96,18 @@ export default function Home() {
             <div className="absolute -top-[3.5rem] bg-background text-foreground left-1/2 -translate-x-1/2">
               <div className="flex relative z-10 flex-col items-center justify-center">
                 <Image
-                  src="/new_img/hotel.png"
+                  src="/final/new_img/hotel-min.png"
                   alt="The Vanaashrya Resort"
                   width={100}
                   height={100}
-                  quality={80}
                 />
               </div>
             </div>
             <div className="aspect-video">
               <Image
-                src={"/hero-img_land.JPG"}
+                src={"/final/hero-img_land-min.webp"}
                 width={1080}
                 height={720}
-                quality={100}
                 alt="The Vanaashrya Resort"
                 className="-scale-y-100 aspect-video w-full object-cover"
               />
@@ -112,10 +117,14 @@ export default function Home() {
       </section>
 
       <section id="gallery-section" className="py-16 lg:py-24">
-        <GalleryPreview />
+        <Suspense>
+          <GalleryPreview />
+        </Suspense>
       </section>
 
-      <TestimonialsSection />
+      <Suspense>
+        <TestimonialsSection />
+      </Suspense>
     </>
   );
 }

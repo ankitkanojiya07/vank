@@ -3,7 +3,7 @@ import React from "react";
 
 const featureCarouselItems = [
   {
-    img: "/final/new_img/feature_1-min.JPG",
+    img: "/final/new_img/feature_1-min.webp",
     title: "Wilderness Luxury",
     subtitle: "Where Royal Heritage Meets Untamed Beauty",
     description:
@@ -11,7 +11,7 @@ const featureCarouselItems = [
     link: "/about",
   },
   {
-    img: "/final/gallery/feature_6-min.jpg",
+    img: "/final/gallery/feature_6-min.webp",
     title: "Bespoke Experiences",
     subtitle: "Curated Adventures in Rajasthan's Heart",
     description:
@@ -19,7 +19,7 @@ const featureCarouselItems = [
     link: "/about",
   },
   {
-    img: "/final/new_img/feature_3-min.jpg",
+    img: "/final/new_img/feature_3-min.webp",
     title: "Tranquil Sanctuary",
     subtitle: "Ancient Hills, Timeless Serenity",
     description:
@@ -27,7 +27,7 @@ const featureCarouselItems = [
     link: "/about",
   },
   {
-    img: "/final/new_img/feature_6-min.jpg",
+    img: "/final/new_img/feature_6-min.webp",
     title: "Conservation Excellence",
     subtitle: "Guardians of India's Majestic Tigers",
     description:
@@ -35,7 +35,7 @@ const featureCarouselItems = [
     link: "/about",
   },
   {
-    img: "/final/new_img/feature_4-min.jpg",
+    img: "/final/new_img/feature_4-min.webp",
     title: "Refined Comfort",
     subtitle: "Modern Elegance in Nature's Embrace",
     description:

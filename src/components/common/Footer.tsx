@@ -57,7 +57,7 @@ const Footer: React.FC = () => {
       <div
         className="absolute inset-0 w-full h-full z-0"
         style={{
-          backgroundImage: "url('/final/gallery/footer-bg-min.jpg')",
+          backgroundImage: "url('/final/gallery/footer-bg-min.webp')",
           backgroundSize: "cover",
           backgroundPosition: "center",
         }}

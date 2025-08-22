@@ -17,7 +17,7 @@ const SariskaBlogComponent = () => {
       href: "/blog/sariska-tiger-reserve",
     },
     {
-      image: "/final/gallery/gal7.jpg",
+      image: "/final/gallery/gal7.webp",
       alt: "Jungle Safari Adventure",
       location: "Ranthambore, Rajasthan",
       title: "Ranthambore National Park - The Land of the Tiger",

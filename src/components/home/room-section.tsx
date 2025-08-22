@@ -5,15 +5,15 @@ import React, { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "motion/react";
 
 const roomImg = [
-  "/final/new_img/room_1-min.jpg",
-  "/final/new_img/room_2-min.jpg",
-  "/final/new_img/room_3-min.jpg",
-  "/final/new_img/room_4-min.jpg",
+  "/final/new_img/room_1-min.webp",
+  "/final/new_img/room_2-min.webp",
+  "/final/new_img/room_3-min.webp",
+  "/final/new_img/room_4-min.webp",
 ];
 
-const barImg = ["/final/new_img/bar3-min.jpg", "/final/new_img/bar3-min.jpg"];
+const barImg = ["/final/new_img/bar3-min.webp", "/final/new_img/bar3-min.webp"];
 
-const rooftopImg = ["/final/new_img/rooftop_1-min.JPG", "/final/new_img/rooftop_2-min.JPG"];
+const rooftopImg = ["/final/new_img/rooftop_1-min.webp", "/final/new_img/rooftop_2-min.webp"];
 
 const imgData = [barImg, roomImg, rooftopImg];
 

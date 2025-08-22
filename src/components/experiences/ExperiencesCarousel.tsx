@@ -13,19 +13,19 @@ const ExperiencesCarousel: React.FC = () => {
       id: 1,
       title: 'Live Cooking',
       description: 'Take a look at the "very-own" kitchen garden where you can see the seasonal vegetables being grown. A cooking demo can be planned where you can learn the secrets of Indian spices and plan your own menu with chef.',
-      image: '/images/experiences/live-cooking.jpg'
+      image: '/images/experiences/live-cooking.webp'
     },
     {
       id: 2,
       title: 'Sariska Tiger Reserve',
       description: 'Escape to the Tiger Reserve to catch our majestic beasts in action. Catch them on the hunt, or even lazing around like the rest of us on a Sunday. Our experienced tour guides take you through trails only known to the locals.',
-      image: '/images/experiences/tiger-safari.jpg'
+      image: '/images/experiences/tiger-safari.webp'
     },
     {
       id: 3,
       title: 'Cultural Performances',
       description: 'The Rajasthani Dance Form Originated From the Bhil Tribe, which was later adopted by the Royal Rajput Communities of Rajasthan.',
-      image: '/images/experiences/cultural-dance.jpg'
+      image: '/images/experiences/cultural-dance.webp'
     }
   ];
 

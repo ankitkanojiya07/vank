@@ -96,7 +96,7 @@ function ParkStats() {
       <ViewMoreCursor>
         <div className="bg-white size-full relative overflow-hidden rounded-md p-4 flex flex-col justify-center items-center text-center border border-gray-200 shadow-lg">
           <Image
-            src={"/final/new_img/tiger_1-min.png"}
+            src={"/final/new_img/tiger_1-min.webp"}
             alt="Tiger"
             width={200}
             height={200}
@@ -113,7 +113,7 @@ function ParkStats() {
       <ViewMoreCursor>
         <div className="bg-white size-full relative overflow-hidden rounded-lg md:p-6 p-4 flex flex-col items-center text-center border border-gray-200 shadow-sm">
           <Image
-            src={"/final/new_img/travel-min.png"}
+            src={"/final/new_img/travel-min.webp"}
             alt="Tiger"
             width={200}
             height={200}
@@ -131,7 +131,7 @@ function ParkStats() {
       <ViewMoreCursor>
         <div className="bg-white size-full relative overflow-hidden rounded-lg p-6 flex flex-col items-center text-center border border-gray-200 shadow-sm">
           <Image
-            src={"/final/new_img/forest-min.png"}
+            src={"/final/new_img/forest-min.webp"}
             alt="Tiger"
             width={200}
             height={200}
@@ -149,7 +149,7 @@ function ParkStats() {
       <ViewMoreCursor>
         <div className="bg-white size-full relative overflow-hidden rounded-lg p-6 flex flex-col items-center text-center border border-gray-200 shadow-sm">
           <Image
-            src={"/final/new_img/time-min.png"}
+            src={"/final/new_img/time-min.webp"}
             alt="Tiger"
             width={200}
             height={200}

@@ -4,62 +4,62 @@ import Image from "next/image";
 const cards = [
   {
     id: 1,
-    image: "/final/gallery/gal7.jpg",
+    image: "/final/gallery/gal7.webp",
     title: "Jungle Safari",
     description:
       "The Sariska gate is just 5 km from the resort. After the successful relocation of tigers, The National Park now has over 19 Tigers.",
   },
   {
     id: 2,
-    image: "/final/gallery/CAMEL-SAFARI-min.jpg",
+    image: "/final/gallery/CAMEL-SAFARI-min.webp",
     title: "Camel Safari",
     description:
       "Visit the Sarpanch and interact with nearby Banjara tribes on a comfortable camel cart.",
   },
   {
     id: 3,
-    image: "/final/gallery/VILAGE-WALK.jpg",
+    image: "/final/gallery/VILAGE-WALK.webp",
     title: "Village Walk",
     description:
       "A guided village walk through the local farms and trails where you can interact and learn about the cattles.",
   },
   {
     id: 4,
-    image: "/final/gallery/BHANGAR-FORT-min.jpg",
+    image: "/final/gallery/BHANGAR-FORT-min.webp",
     title: "Bhangarh Fort",
     description:
       "Just 30 min drive away, this infamous haunted fort comes under archaeological survey of India.",
   },
   {
     id: 5,
-    image: "/final/gallery/NEELKHANT-TEMPLE.jpg",
+    image: "/final/gallery/NEELKHANT-TEMPLE.webp",
     title: "Neelkanth Temple",
     description:
       "Neelkanth Mahadev Temple (dedicated to Lord Shiva) was constructed in 1010 ad by the Bargujar King Ajay Pal.",
   },
   {
     id: 6,
-    image: "/final/gallery/ABHANERI.jpg",
+    image: "/final/gallery/ABHANERI.webp",
     title: "Abhaneri",
     description:
       "Abhaneri is a village in the Dausa district of the Indian state of Rajasthan.",
   },
   {
     id: 7,
-    image: "/final/gallery/HIKING.jpg",
+    image: "/final/gallery/HIKING.webp",
     title: "Trekking & Hiking",
     description:
       "Hiking amongst the Aravali Ranges walking through the agriculture fields can be planned on request.",
   },
   {
     id: 8,
-    image: "/final/gallery/MANSOROVER-LAKE.jpg",
+    image: "/final/gallery/MANSOROVER-LAKE.webp",
     title: "Mansarovar Lake",
     description: "Drive/trek to witness beautiful sunset at Mansarovar Lake.",
   },
   {
     id: 9,
-    image: "/final/gallery/CYCLING-min.jpg",
+    image: "/final/gallery/CYCLING-min.webp",
     title: "Cycling",
     description:
       "Enjoy the cycling on typical village roads with friends/family.",

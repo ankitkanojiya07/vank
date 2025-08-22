@@ -4,7 +4,7 @@ import React from 'react';
 import HeroSection from '@/components/common/HeroSection';
 
 const heroData = {
-  image: '/gallery/herobackground.jpg',
+  image: '/gallery/herobackground.webp',
   title: 'Privacy Policy',
   description: 'Your privacy is important to us. Read how we protect and use your information at Vanaashrya.',
   height: 'h-[50vh]',

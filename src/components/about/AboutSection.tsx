@@ -65,7 +65,7 @@ const AboutSection: React.FC = () => {
             <div
               className="rounded-lg overflow-hidden shadow-2xl h-80 bg-cover bg-center"
               style={{
-                backgroundImage: "url('./gallery/7424630ac3.jpg')",
+                backgroundImage: "url('./gallery/7424630ac3.webp')",
               }}
             />
             {/* Overlay Card */}

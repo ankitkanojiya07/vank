@@ -30,7 +30,7 @@ export const rooms: Room[] = [
     ],
     description:
       "Our luxurious cottages offer our guests an authentic royal experience that was experienced by our Royals on their several hunting trips in the National Park. The luxury property is the reflection of the love and dedication of the hotel towards wildlife, its conservation and creating a brilliant experience for the wildlife lovers!",
-    images: ["/final/images/cottage-min.jpg"],
+    images: ["/final/images/cottage-min.webp"],
     price: "From ₹8,000",
     isAvailable: true,
   },
@@ -52,7 +52,7 @@ export const rooms: Room[] = [
     ],
     description:
       "The Villa Room at Vanaashrya Resort near Sariska offers a luxurious escape with elegant interiors, modern amenities, and stunning views of the surrounding wilderness. Featuring spacious layouts, private balconies, and serene ambiance, it provides a perfect blend of comfort and nature for a peaceful and rejuvenating stay.",
-    images: ["/final/images/villa-min.jpg"],
+    images: ["/final/images/villa-min.webp"],
     price: "From ₹12,000",
     isAvailable: true,
   },
@@ -75,7 +75,7 @@ export const rooms: Room[] = [
     ],
     description:
       "The Kothi Room at Vanaashrya Resort near Sariska Tiger Reserve combines traditional charm with modern comfort. Offering spacious interiors, cozy furnishings, and scenic views, it provides a tranquil retreat. Guests can enjoy a peaceful atmosphere, private space, and a close connection to nature, ensuring a memorable and relaxing stay.",
-    images: ["/final/images/kothi-min.jpg"],
+    images: ["/final/images/kothi-min.webp"],
     price: "From ₹18,000",
     isAvailable: true,
   },
@@ -99,7 +99,7 @@ export const rooms: Room[] = [
   //   ],
   //   description:
   //     "The Suite Room at Vanaashrya Resort near Sariska National Park offers a lavish stay with elegant décor, ample space, and modern amenities. Featuring a separate living area, plush furnishings, and panoramic views, it ensures a luxurious and serene retreat. Perfect for guests seeking comfort, privacy, and a connection to nature.",
-  //   images: ["/images/room_feature_1.jpg"],
+  //   images: ["/images/room_feature_1.webp"],
   //   price: "From ₹25,000",
   //   isAvailable: true,
   // },
@@ -123,7 +123,7 @@ export const rooms: Room[] = [
     ],
     description:
       "The Suite Room at Vanaashrya Resort near Sariska National Park offers a lavish stay with elegant décor, ample space, and modern amenities. Featuring a separate living area, plush furnishings, and panoramic views, it ensures a luxurious and serene retreat. Perfect for guests seeking comfort, privacy, and a connection to nature.",
-    images: ["/final/images/suite-min.jpg"],
+    images: ["/final/images/suite-min.webp"],
     price: "From ₹30,000",
     isAvailable: true,
   },

@@ -96,7 +96,7 @@ export default function Home() {
             <div className="absolute -top-[3.5rem] bg-background text-foreground left-1/2 -translate-x-1/2">
               <div className="flex relative z-10 flex-col items-center justify-center">
                 <Image
-                  src="/final/new_img/hotel-min.png"
+                  src="/final/new_img/hotel-min.webp"
                   alt="The Vanaashrya Resort"
                   width={100}
                   height={100}

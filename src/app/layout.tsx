@@ -29,7 +29,7 @@ export const metadata: Metadata = {
     siteName: "Vanaashrya Resort",
     images: [
       {
-        url: "/gallery/herobackground.jpg",
+        url: "/gallery/herobackground.webp",
         width: 1200,
         height: 630,
         alt: "Vanaashrya Resort - Luxury Wildlife Resort",
@@ -43,7 +43,7 @@ export const metadata: Metadata = {
     title: "Vanaashrya Resort - Luxury Wildlife Resort in Sariska",
     description:
       "Experience luxury in the heart of Sariska Tiger Reserve. Premium accommodations and unforgettable wildlife experiences.",
-    images: ["/gallery/herobackground.jpg"],
+    images: ["/gallery/herobackground.webp"],
   },
   robots: {
     index: true,

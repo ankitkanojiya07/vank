@@ -35,7 +35,7 @@ const HeroDesktop: React.FC = () => {
       <motion.div
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
         style={{
-          backgroundImage: "linear-gradient(rgba(0,0,0,0.45),rgba(0,0,0,0.25)), url('./gallery/herobackground.jpg')",
+          backgroundImage: "linear-gradient(rgba(0,0,0,0.45),rgba(0,0,0,0.25)), url('./gallery/herobackground.webp')",
           transformOrigin: "bottom center"
         }}
         variants={bgVariants}

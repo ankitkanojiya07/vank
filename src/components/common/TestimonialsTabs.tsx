@@ -94,7 +94,7 @@ const TestimonialsTabs: React.FC = () => {
                     >
                       {/* Thumbnail Image */}
                       <img
-                        src="/final/gallery/slo.JPG"
+                        src="/final/gallery/slo.webp"
                         alt="Hotel video thumbnail"
                         className="w-full h-full object-cover"
                         onError={(e) => {
@@ -144,7 +144,7 @@ const TestimonialsTabs: React.FC = () => {
                       onPlay={handleVideoPlay}
                       onPause={handleVideoPause}
                       onEnded={handleVideoPause}
-                      poster="/final/gallery/slo.jpg"
+                      poster="/final/gallery/slo.webp"
                     >
                       <source src="/final/gallery/vans.webm" type="video/webm" />
                       {/* <source src="/videos/hotel-tour.webm" type="video/webm" /> */}

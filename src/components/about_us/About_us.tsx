@@ -44,17 +44,17 @@ export default function AmenitiesSection() {
           {[
             {
               title: "Accommodation",
-              image: "/final/gallery/bh-min.jpg",
+              image: "/final/gallery/bh-min.webp",
               href: "/accommodations",
             },
             {
               title: "Amenities",
-              image: "/final/gallery/gal3-min.jpg",
+              image: "/final/gallery/gal3-min.webp",
               href: "/amenities",
             },
             {
               title: "Excursions",
-              image: "/final/gallery/bh1-min.jpg",
+              image: "/final/gallery/bh1-min.webp",
               href: "/excursions",
             },
           ].map(({ title, image, href }) => (

@@ -24,7 +24,7 @@ export default function RanthamboreNationalParkBlog() {
               <Image
                 width={1200}
                 height={800}
-                src="/final/gallery/gal7.jpg"
+                src="/final/gallery/gal7.webp"
                 alt="Jungle Safari Adventure"
                 className="absolute inset-0 w-full h-full object-cover"
               />
